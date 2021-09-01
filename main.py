@@ -1,16 +1,24 @@
-# This is a sample Python script.
-
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from Data_Structures.ABB import ABB
+from Obj.Student import Student
+from Grafo.ABB_Graph import ABB_Graph
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    arbol = ABB()
+    grafo = ABB_Graph()
+    arbol.insertar(Student(201800524,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201800525,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201800526,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201533907,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201491494 ,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201045090 ,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201027375 ,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201800526,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201340841 ,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201296311 ,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201835603 ,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201639410 ,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.insertar(Student(201800526,3132221122331, "Tomas", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
+    arbol.buildTree(arbol.root)
+    grafo.graph_avl(arbol.root)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
