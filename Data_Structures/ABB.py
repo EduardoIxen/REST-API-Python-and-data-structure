@@ -42,3 +42,10 @@ class ABB:
         node.left.root = self.buildTreeUtil(nodes, start, mid-1)
         node.right.root = self.buildTreeUtil(nodes, mid+1, end)
         return node
+
+    def search(self, local_root, key):
+        if local_root is None or local_root.student.carnet == key:
+            return local_root
+        if local_root.student.carnet < key:
+            return self.search(local_root.right.root, key)
+        return self.search(local_root.left.root, key)
