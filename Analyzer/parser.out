@@ -1,0 +1,462 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ID
+
+Grammar
+
+Rule 0     S' -> init
+Rule 1     init -> LQUESTION RELEMENTS RQUESTION list_elements LQUESTION DOLLAR RELEMENTS RQUESTION
+Rule 2     list_elements -> list_elements element
+Rule 3     list_elements -> element
+Rule 4     element -> LQUESTION RELEMENT typeElement RQUESTION list_items LQUESTION DOLLAR RELEMENT RQUESTION
+Rule 5     typeElement -> RTYPE EQUAL STRING
+Rule 6     list_items -> list_items item
+Rule 7     list_items -> item
+Rule 8     item -> LQUESTION RITEM typeItem EQUAL valyeItem DOLLAR RQUESTION
+Rule 9     valyeItem -> STRING
+Rule 10    valyeItem -> NUMBER
+Rule 11    typeItem -> RCARNET
+Rule 12    typeItem -> RNOMBRE
+Rule 13    typeItem -> RDPI
+Rule 14    typeItem -> RCARRERA
+Rule 15    typeItem -> RCORREO
+Rule 16    typeItem -> RPASSWORD
+Rule 17    typeItem -> RCREDITOS
+Rule 18    typeItem -> REDAD
+Rule 19    typeItem -> RDESCRIPCION
+Rule 20    typeItem -> RMATERIA
+Rule 21    typeItem -> RFECHA
+Rule 22    typeItem -> RHORA
+Rule 23    typeItem -> RESTADO
+
+Terminals, with rules where they appear
+
+DOLLAR               : 1 4 8
+EQUAL                : 5 8
+ID                   : 
+LQUESTION            : 1 1 4 4 8
+NUMBER               : 10
+RCARNET              : 11
+RCARRERA             : 14
+RCORREO              : 15
+RCREDITOS            : 17
+RDESCRIPCION         : 19
+RDPI                 : 13
+REDAD                : 18
+RELEMENT             : 4 4
+RELEMENTS            : 1 1
+RESTADO              : 23
+RFECHA               : 21
+RHORA                : 22
+RITEM                : 8
+RMATERIA             : 20
+RNOMBRE              : 12
+RPASSWORD            : 16
+RQUESTION            : 1 1 4 4 8
+RTYPE                : 5
+STRING               : 5 9
+error                : 
+
+Nonterminals, with rules where they appear
+
+element              : 2 3
+init                 : 0
+item                 : 6 7
+list_elements        : 1 2
+list_items           : 4 6
+typeElement          : 4
+typeItem             : 8
+valyeItem            : 8
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . init
+    (1) init -> . LQUESTION RELEMENTS RQUESTION list_elements LQUESTION DOLLAR RELEMENTS RQUESTION
+
+    LQUESTION       shift and go to state 2
+
+    init                           shift and go to state 1
+
+state 1
+
+    (0) S' -> init .
+
+
+
+state 2
+
+    (1) init -> LQUESTION . RELEMENTS RQUESTION list_elements LQUESTION DOLLAR RELEMENTS RQUESTION
+
+    RELEMENTS       shift and go to state 3
+
+
+state 3
+
+    (1) init -> LQUESTION RELEMENTS . RQUESTION list_elements LQUESTION DOLLAR RELEMENTS RQUESTION
+
+    RQUESTION       shift and go to state 4
+
+
+state 4
+
+    (1) init -> LQUESTION RELEMENTS RQUESTION . list_elements LQUESTION DOLLAR RELEMENTS RQUESTION
+    (2) list_elements -> . list_elements element
+    (3) list_elements -> . element
+    (4) element -> . LQUESTION RELEMENT typeElement RQUESTION list_items LQUESTION DOLLAR RELEMENT RQUESTION
+
+    LQUESTION       shift and go to state 5
+
+    list_elements                  shift and go to state 6
+    element                        shift and go to state 7
+
+state 5
+
+    (4) element -> LQUESTION . RELEMENT typeElement RQUESTION list_items LQUESTION DOLLAR RELEMENT RQUESTION
+
+    RELEMENT        shift and go to state 8
+
+
+state 6
+
+    (1) init -> LQUESTION RELEMENTS RQUESTION list_elements . LQUESTION DOLLAR RELEMENTS RQUESTION
+    (2) list_elements -> list_elements . element
+    (4) element -> . LQUESTION RELEMENT typeElement RQUESTION list_items LQUESTION DOLLAR RELEMENT RQUESTION
+
+    LQUESTION       shift and go to state 9
+
+    element                        shift and go to state 10
+
+state 7
+
+    (3) list_elements -> element .
+
+    LQUESTION       reduce using rule 3 (list_elements -> element .)
+
+
+state 8
+
+    (4) element -> LQUESTION RELEMENT . typeElement RQUESTION list_items LQUESTION DOLLAR RELEMENT RQUESTION
+    (5) typeElement -> . RTYPE EQUAL STRING
+
+    RTYPE           shift and go to state 12
+
+    typeElement                    shift and go to state 11
+
+state 9
+
+    (1) init -> LQUESTION RELEMENTS RQUESTION list_elements LQUESTION . DOLLAR RELEMENTS RQUESTION
+    (4) element -> LQUESTION . RELEMENT typeElement RQUESTION list_items LQUESTION DOLLAR RELEMENT RQUESTION
+
+    DOLLAR          shift and go to state 13
+    RELEMENT        shift and go to state 8
+
+
+state 10
+
+    (2) list_elements -> list_elements element .
+
+    LQUESTION       reduce using rule 2 (list_elements -> list_elements element .)
+
+
+state 11
+
+    (4) element -> LQUESTION RELEMENT typeElement . RQUESTION list_items LQUESTION DOLLAR RELEMENT RQUESTION
+
+    RQUESTION       shift and go to state 14
+
+
+state 12
+
+    (5) typeElement -> RTYPE . EQUAL STRING
+
+    EQUAL           shift and go to state 15
+
+
+state 13
+
+    (1) init -> LQUESTION RELEMENTS RQUESTION list_elements LQUESTION DOLLAR . RELEMENTS RQUESTION
+
+    RELEMENTS       shift and go to state 16
+
+
+state 14
+
+    (4) element -> LQUESTION RELEMENT typeElement RQUESTION . list_items LQUESTION DOLLAR RELEMENT RQUESTION
+    (6) list_items -> . list_items item
+    (7) list_items -> . item
+    (8) item -> . LQUESTION RITEM typeItem EQUAL valyeItem DOLLAR RQUESTION
+
+    LQUESTION       shift and go to state 17
+
+    list_items                     shift and go to state 18
+    item                           shift and go to state 19
+
+state 15
+
+    (5) typeElement -> RTYPE EQUAL . STRING
+
+    STRING          shift and go to state 20
+
+
+state 16
+
+    (1) init -> LQUESTION RELEMENTS RQUESTION list_elements LQUESTION DOLLAR RELEMENTS . RQUESTION
+
+    RQUESTION       shift and go to state 21
+
+
+state 17
+
+    (8) item -> LQUESTION . RITEM typeItem EQUAL valyeItem DOLLAR RQUESTION
+
+    RITEM           shift and go to state 22
+
+
+state 18
+
+    (4) element -> LQUESTION RELEMENT typeElement RQUESTION list_items . LQUESTION DOLLAR RELEMENT RQUESTION
+    (6) list_items -> list_items . item
+    (8) item -> . LQUESTION RITEM typeItem EQUAL valyeItem DOLLAR RQUESTION
+
+    LQUESTION       shift and go to state 23
+
+    item                           shift and go to state 24
+
+state 19
+
+    (7) list_items -> item .
+
+    LQUESTION       reduce using rule 7 (list_items -> item .)
+
+
+state 20
+
+    (5) typeElement -> RTYPE EQUAL STRING .
+
+    RQUESTION       reduce using rule 5 (typeElement -> RTYPE EQUAL STRING .)
+
+
+state 21
+
+    (1) init -> LQUESTION RELEMENTS RQUESTION list_elements LQUESTION DOLLAR RELEMENTS RQUESTION .
+
+    $end            reduce using rule 1 (init -> LQUESTION RELEMENTS RQUESTION list_elements LQUESTION DOLLAR RELEMENTS RQUESTION .)
+
+
+state 22
+
+    (8) item -> LQUESTION RITEM . typeItem EQUAL valyeItem DOLLAR RQUESTION
+    (11) typeItem -> . RCARNET
+    (12) typeItem -> . RNOMBRE
+    (13) typeItem -> . RDPI
+    (14) typeItem -> . RCARRERA
+    (15) typeItem -> . RCORREO
+    (16) typeItem -> . RPASSWORD
+    (17) typeItem -> . RCREDITOS
+    (18) typeItem -> . REDAD
+    (19) typeItem -> . RDESCRIPCION
+    (20) typeItem -> . RMATERIA
+    (21) typeItem -> . RFECHA
+    (22) typeItem -> . RHORA
+    (23) typeItem -> . RESTADO
+
+    RCARNET         shift and go to state 26
+    RNOMBRE         shift and go to state 27
+    RDPI            shift and go to state 28
+    RCARRERA        shift and go to state 29
+    RCORREO         shift and go to state 30
+    RPASSWORD       shift and go to state 31
+    RCREDITOS       shift and go to state 32
+    REDAD           shift and go to state 33
+    RDESCRIPCION    shift and go to state 34
+    RMATERIA        shift and go to state 35
+    RFECHA          shift and go to state 36
+    RHORA           shift and go to state 37
+    RESTADO         shift and go to state 38
+
+    typeItem                       shift and go to state 25
+
+state 23
+
+    (4) element -> LQUESTION RELEMENT typeElement RQUESTION list_items LQUESTION . DOLLAR RELEMENT RQUESTION
+    (8) item -> LQUESTION . RITEM typeItem EQUAL valyeItem DOLLAR RQUESTION
+
+    DOLLAR          shift and go to state 39
+    RITEM           shift and go to state 22
+
+
+state 24
+
+    (6) list_items -> list_items item .
+
+    LQUESTION       reduce using rule 6 (list_items -> list_items item .)
+
+
+state 25
+
+    (8) item -> LQUESTION RITEM typeItem . EQUAL valyeItem DOLLAR RQUESTION
+
+    EQUAL           shift and go to state 40
+
+
+state 26
+
+    (11) typeItem -> RCARNET .
+
+    EQUAL           reduce using rule 11 (typeItem -> RCARNET .)
+
+
+state 27
+
+    (12) typeItem -> RNOMBRE .
+
+    EQUAL           reduce using rule 12 (typeItem -> RNOMBRE .)
+
+
+state 28
+
+    (13) typeItem -> RDPI .
+
+    EQUAL           reduce using rule 13 (typeItem -> RDPI .)
+
+
+state 29
+
+    (14) typeItem -> RCARRERA .
+
+    EQUAL           reduce using rule 14 (typeItem -> RCARRERA .)
+
+
+state 30
+
+    (15) typeItem -> RCORREO .
+
+    EQUAL           reduce using rule 15 (typeItem -> RCORREO .)
+
+
+state 31
+
+    (16) typeItem -> RPASSWORD .
+
+    EQUAL           reduce using rule 16 (typeItem -> RPASSWORD .)
+
+
+state 32
+
+    (17) typeItem -> RCREDITOS .
+
+    EQUAL           reduce using rule 17 (typeItem -> RCREDITOS .)
+
+
+state 33
+
+    (18) typeItem -> REDAD .
+
+    EQUAL           reduce using rule 18 (typeItem -> REDAD .)
+
+
+state 34
+
+    (19) typeItem -> RDESCRIPCION .
+
+    EQUAL           reduce using rule 19 (typeItem -> RDESCRIPCION .)
+
+
+state 35
+
+    (20) typeItem -> RMATERIA .
+
+    EQUAL           reduce using rule 20 (typeItem -> RMATERIA .)
+
+
+state 36
+
+    (21) typeItem -> RFECHA .
+
+    EQUAL           reduce using rule 21 (typeItem -> RFECHA .)
+
+
+state 37
+
+    (22) typeItem -> RHORA .
+
+    EQUAL           reduce using rule 22 (typeItem -> RHORA .)
+
+
+state 38
+
+    (23) typeItem -> RESTADO .
+
+    EQUAL           reduce using rule 23 (typeItem -> RESTADO .)
+
+
+state 39
+
+    (4) element -> LQUESTION RELEMENT typeElement RQUESTION list_items LQUESTION DOLLAR . RELEMENT RQUESTION
+
+    RELEMENT        shift and go to state 41
+
+
+state 40
+
+    (8) item -> LQUESTION RITEM typeItem EQUAL . valyeItem DOLLAR RQUESTION
+    (9) valyeItem -> . STRING
+    (10) valyeItem -> . NUMBER
+
+    STRING          shift and go to state 43
+    NUMBER          shift and go to state 44
+
+    valyeItem                      shift and go to state 42
+
+state 41
+
+    (4) element -> LQUESTION RELEMENT typeElement RQUESTION list_items LQUESTION DOLLAR RELEMENT . RQUESTION
+
+    RQUESTION       shift and go to state 45
+
+
+state 42
+
+    (8) item -> LQUESTION RITEM typeItem EQUAL valyeItem . DOLLAR RQUESTION
+
+    DOLLAR          shift and go to state 46
+
+
+state 43
+
+    (9) valyeItem -> STRING .
+
+    DOLLAR          reduce using rule 9 (valyeItem -> STRING .)
+
+
+state 44
+
+    (10) valyeItem -> NUMBER .
+
+    DOLLAR          reduce using rule 10 (valyeItem -> NUMBER .)
+
+
+state 45
+
+    (4) element -> LQUESTION RELEMENT typeElement RQUESTION list_items LQUESTION DOLLAR RELEMENT RQUESTION .
+
+    LQUESTION       reduce using rule 4 (element -> LQUESTION RELEMENT typeElement RQUESTION list_items LQUESTION DOLLAR RELEMENT RQUESTION .)
+
+
+state 46
+
+    (8) item -> LQUESTION RITEM typeItem EQUAL valyeItem DOLLAR . RQUESTION
+
+    RQUESTION       shift and go to state 47
+
+
+state 47
+
+    (8) item -> LQUESTION RITEM typeItem EQUAL valyeItem DOLLAR RQUESTION .
+
+    LQUESTION       reduce using rule 8 (item -> LQUESTION RITEM typeItem EQUAL valyeItem DOLLAR RQUESTION .)
+
