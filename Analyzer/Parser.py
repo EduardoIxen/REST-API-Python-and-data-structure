@@ -32,7 +32,7 @@ def p_list_items2(t):
 
 def p_item(t):
     'item : LQUESTION RITEM typeItem EQUAL valyeItem DOLLAR RQUESTION'
-    t[0] = {'tipo': t[3], 'valor': t[5]}
+    t[0] = {'key': t[3], 'value': t[5]}
 
 def p_valueItem(t):
     '''valyeItem : STRING

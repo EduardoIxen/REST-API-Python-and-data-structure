@@ -1,7 +1,8 @@
 from Data_Structures.ABB import ABB
 from Analyzer.Parser import parse
+from Controller.LoadData import load_student
 #from Obj.Student import Student
-#from Grafo.ABB_Graph import ABB_Graph
+from Grafo.ABB_Graph import ABB_Graph
 import flask.cli
 
 from Data_Structures.Double_Linked_List import Double_Linked_List
@@ -9,7 +10,7 @@ from flask import Flask, jsonify, request
 
 
 #if __name__ == '__main__':
-arbol = ABB()
+tree_student = ABB()
 # grafo = ABB_Graph()
 # arbol.insertar(Student(201800524,3132221122331, "encontrado", "sistemas", "ed@fm.com", "asdasd", 126, 22, None))
 # arbol.buildTree(arbol.root)
@@ -55,7 +56,9 @@ def loadFile():
         content = f.read()
         f.close()
         lstValues = parse(content)
-        print("len = ",len(lstValues))
+        load_student(tree_student, lstValues)
+        grafo = ABB_Graph()
+        grafo.graph_avl(tree_student.root)
         return {"Exito":"Insertado correctamente"}, 201
     return {"error": "Request must be JSON"}, 415
 
