@@ -1,9 +1,9 @@
 from Obj.Student import Student
 from Obj.Task import Task
-from Data_Structures.Double_Linked_List import Double_Linked_List
+from Data_Structures.List_Year import List_Year
 
 def load_student(tree_student, list_value):
-    listTask = []
+    list_task = []
     for data in list_value:
         email = " " #i don't know if the mail is in the input file
         if data['type'].lower() == "user":
@@ -26,7 +26,7 @@ def load_student(tree_student, list_value):
                     age = item['value']
                 else:
                     print("ERROR// Invalid item.")
-            newStudent = Student(carnet, dpi, name, degree, email, password, credits, age, Double_Linked_List())
+            newStudent = Student(carnet, dpi, name, degree, email, password, credits, age, List_Year())
             tree_student.insert(newStudent)
 
 
@@ -47,6 +47,15 @@ def load_student(tree_student, list_value):
                 elif item['key'].lower() == "estado":
                     statusT = item['value']
             newTask = Task(carnetT, nameT, desctiptionT, courseT, dateT, hourT, statusT)
-            listTask.append(newTask)
+            list_task.append(newTask)
 
-    print(len(listTask))
+    for task in list_task:
+        node_student = tree_student.search(task.carnet)
+        if node_student is not None:
+            student = node_student.student
+            list_date = task.date.strip().split(sep="/")
+            student.list_year.insert(list_date[2])
+            aaa = student.list_year.search(list_date[2]).data.list_months.insert(list_date[1])
+            print("nn")
+        else:
+            print("Student not founf: ", task.carnet)

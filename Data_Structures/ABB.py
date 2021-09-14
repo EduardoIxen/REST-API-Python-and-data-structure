@@ -79,6 +79,54 @@ class ABB:
         root.right.root = self.root.left.root
         self.root.left.root = root
 
+    def delete_student(self, carnet):
+        self.root = self.delete_student2(self.root, carnet)
+
+    def delete_student2(self, root, carnet):
+        if root is None:
+            return root
+
+        if carnet < root.student.carnet:
+            root.left.root = self.delete_student2(root.left.root, carnet)
+            return root
+        elif carnet > root.student.carnet:
+            root.right.root = self.delete_student2(root.right.root, carnet)
+            return root
+
+            # Para un nodo hoja
+        if root.left.root is None and root.right.root is None:
+            if self.root == root:
+                self.root = None
+            return None
+
+            # para un nodo con un solo hijo
+        if root.right.root is None:
+            temp = root.rigth.root
+            root = None
+            return temp
+
+        if root.right.root is None:
+            temp = root.left.root
+            root = None
+            return temp
+
+            # Para un nodo con dos hijos
+        tempPadre = root
+
+        succ = root.right.root
+        while succ.left.root != None:
+            tempPadre = succ
+            succ = succ.left.root
+
+        if tempPadre != root:
+            tempPadre.left.root = succ.right.root
+        else:
+            tempPadre.right.root = succ.right.root
+
+        root.student = succ.student
+
+        return root
+
     '''
     def buildTree(self, root):
         nodes = []
@@ -103,11 +151,14 @@ class ABB:
         node.left.root = self.buildTreeUtil(nodes, start, mid-1)
         node.right.root = self.buildTreeUtil(nodes, mid+1, end)
         return node
+    '''
+    def search(self, key):
+        return self.search2(self.root, key)
 
-    def search(self, local_root, key):
+    def search2(self, local_root, key):
         if local_root is None or local_root.student.carnet == key:
             return local_root
         if local_root.student.carnet < key:
-            return self.search(local_root.right.root, key)
-        return self.search(local_root.left.root, key)
-    '''
+            return self.search2(local_root.right.root, key)
+        return self.search2(local_root.left.root, key)
+
