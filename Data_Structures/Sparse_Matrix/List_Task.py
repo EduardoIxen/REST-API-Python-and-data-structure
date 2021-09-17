@@ -1,10 +1,11 @@
 from Data_Structures.Double_Linked_List import Double_Linked_List
 from Data_Structures.NodeList import NodeList
-from Obj.Task import Task
+from Data_Structures.Sparse_Matrix.NodeM import NodeM
 
-class List_Task(Double_Linked_List):
+class List_Task(Double_Linked_List, NodeM):
     def __init__(self):
-        Double_Linked_List.__init__()
+        NodeM.__init__(self)
+        Double_Linked_List.__init__(NodeM)
         self.row = 0
         self.column = 0
 
@@ -27,4 +28,7 @@ class List_Task(Double_Linked_List):
 
     def getValue(self):
         return "Numero de tareas: "+str(self.size)
+
+    def print_v(self):
+        pass
 

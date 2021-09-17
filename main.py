@@ -1,9 +1,8 @@
 from Data_Structures.ABB import ABB
 from Analyzer.Parser import parse
 from Controller.LoadData import load_student
-#from Obj.Student import Student
 from Grafo.ABB_Graph import ABB_Graph
-import flask.cli
+from Controller.GenerateReport import make_report
 
 from Data_Structures.Double_Linked_List import Double_Linked_List
 from flask import Flask, jsonify, request
@@ -51,16 +50,21 @@ def index():
 def loadFile():
     req = request.json
     if request.is_json:
-        print(f"tipo: {req['tipo']}, path: {req['path']}")
         f = open(req['path'], "r", encoding="utf-8")
         content = f.read()
         f.close()
         lstValues = parse(content)
         load_student(tree_student, lstValues)
-        grafo = ABB_Graph()
-        grafo.graph_avl(tree_student.root)
-        return {"Exito":"Insertado correctamente"}, 201
+        return {"Exito":"Archivo cargado correctamente"}, 201
     return {"error": "Request must be JSON"}, 415
+
+@app.get("/reporte")
+def mekeReports():
+    req = request.json
+    if request.is_json:
+        return make_report(req, tree_student)
+    else:
+        return {"error": "Request must be JSON"}, 415
 
 if __name__ == '__main__':
     app.run(debug=True)

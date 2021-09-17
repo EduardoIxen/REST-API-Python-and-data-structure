@@ -1,6 +1,7 @@
 from Obj.Student import Student
 from Obj.Task import Task
 from Data_Structures.List_Year import List_Year
+from Grafo.Matriz_Graph import Matrix_Graph
 
 def load_student(tree_student, list_value):
     list_task = []
@@ -55,7 +56,9 @@ def load_student(tree_student, list_value):
             student = node_student.student
             list_date = task.date.strip().split(sep="/")
             student.list_year.insert(list_date[2])
-            aaa = student.list_year.search(list_date[2]).data.list_months.insert(list_date[1])
-            print("nn")
+            student.list_year.search(list_date[2]).data.list_months.insert(list_date[1])
+            node_monthstd = student.list_year.search(list_date[2]).data.list_months.search(list_date[1])
+            hourF = task.hour.strip().split(sep=":")
+            node_monthstd.data.sparse_matrix.add_task(hourF[0], list_date[0], task)
         else:
             print("Student not founf: ", task.carnet)

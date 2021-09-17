@@ -5,7 +5,7 @@ from Obj.Month import Month
 
 class List_Month(Double_Linked_List):
     def insert(self, month):
-        if self.search(month):
+        if self.search(month) is not None:
             print(f"ADVERTENCIA// El mes {month}, ya existe en la lista doblemente enlazada. (No se volvio a agregar)")
             return
 
@@ -45,10 +45,10 @@ class List_Month(Double_Linked_List):
     def search(self, month):
         aux = self.first
         while aux is not None:
-            if aux.data.numberM == month:
-                return True
+            if aux.data.numberM == str(month):
+                return aux
             aux = aux.next
 
-        return False
+        return None
 
 #retornar nodo para insertar en matriz dispersa
