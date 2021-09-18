@@ -1,3 +1,6 @@
-__pycache__/
-parser.out
-parsetab.py
+/__pycache__/
+/parser.out
+/parsetab.py
+/Report/
+/data.txt
+*.pyc

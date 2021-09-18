@@ -12,15 +12,15 @@ class List_Task(Double_Linked_List, NodeM):
     def insert(self, row, column, task):
         self.row = row
         self.column = column
-        new_node = NodeList(task)
+        #new_node = NodeList(task)
         if self.first is None:
-            self.first = new_node
-            self.last = new_node
+            self.first = task
+            self.last = task
             self.size += 1
         else:
-            self.last.next = new_node
-            new_node.previus = self.last
-            self.last = new_node
+            self.last.next = task
+            task.previous = self.last
+            self.last = task
             self.size += 1
 
     def search(self):

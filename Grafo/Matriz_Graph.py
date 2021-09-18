@@ -76,14 +76,6 @@ class Matrix_Graph:
                     cabeceraFila + enlacesElementosFila + \
                     enlacesElementosColumna + "\n}\n"
 
-        #f = open('grafo.dot', 'w')
-        #try:
-        #    f.write(acumInfo)
-        #finally:
-        #    f.close()
-
-        #prog = "dot -Tsvg  grafo.dot -o grafo.svg"
-        #os.system(prog)
         s = Source(acumInfo, filename="matrix", format="svg")
         s.view()
 

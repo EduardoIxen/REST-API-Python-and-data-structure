@@ -14,6 +14,7 @@ class Matrix:
             ls_task.insert(_hour, _day, _task)
 
     def insert(self, _hour, _day, _task):
+
         hour = Hour(_hour)
         nodeRow = self.head_row.insert(hour) #insert header row
 
@@ -28,6 +29,7 @@ class Matrix:
             nodeCol.down = new_lsTask
             return None
         elif nodeRow.right is not None and nodeCol.down is None: #exist row and not column
+            #hacer nodo a la tarea obj ----------------->
             new_lsTask = self.new_list_task(_hour, _day, _task)
             nodeCol.down = new_lsTask #link the new header
 
