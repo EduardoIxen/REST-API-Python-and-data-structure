@@ -4,3 +4,5 @@
 /Report/
 /data.txt
 *.pyc
+*.dot
+*.svg

@@ -1,7 +1,7 @@
 from Obj.Student import Student
 from Obj.Task import Task
 from Data_Structures.List_Year import List_Year
-from Grafo.Matriz_Graph import Matrix_Graph
+from Graph.Matriz_Graph import Matrix_Graph
 
 def load_student(tree_student, list_value):
     list_task = []

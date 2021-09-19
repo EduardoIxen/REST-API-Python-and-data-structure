@@ -1,0 +1,50 @@
+digraph G{
+        node[shape=box, width = 1.5, style=filled, color=SpringGreen3];
+        edge[color=black];
+        rankdir=UD;
+        Matriz[label="Matriz", width = 1.5, style = filled, fillcolor = MediumOrchid1, gropu = fila];
+{rank=same; Matriz;"142160267307";"142160267301";"142160267310";}
+
+{rank=same; 142160223835;"142160267313";}
+{rank=same; 142160267298;"142160267304";}
+{rank=same; 142160267322;"142160267331";}
+{rank=same; 142160267316;"142160267319";}
+"142160267307"[label="13", group=13,width = 1.3, style=filled, color=RoyalBlue1];
+"142160267301"[label="28", group=28,width = 1.3, style=filled, color=RoyalBlue1];
+"142160267310"[label="29", group=29,width = 1.3, style=filled, color=RoyalBlue1];
+"142160223835"[label = "13",width = 1.5, group=fila, style=filled, color=DarkOrange1];
+"142160267298"[label = "15",width = 1.5, group=fila, style=filled, color=DarkOrange1];
+"142160267322"[label = "18",width = 1.5, group=fila, style=filled, color=DarkOrange1];
+"142160267316"[label = "19",width = 1.5, group=fila, style=filled, color=DarkOrange1];
+"142160267313"[label = "Numero de tareas: 1", group=29];
+
+"142160267304"[label = "Numero de tareas: 4", group=28];
+
+"142160267331"[label = "Numero de tareas: 1", group=28];
+
+"142160267319"[label = "Numero de tareas: 1", group=13];
+
+Matriz -> "142160267307";
+"142160267307" -> "142160267301" [dir="both"];
+"142160267301" -> "142160267310" [dir="both"];
+Matriz -> "142160223835";
+"142160223835" -> "142160267298" [dir="both"];
+"142160267298" -> "142160267322" [dir="both"];
+"142160267322" -> "142160267316" [dir="both"];
+"142160223835" -> "142160267313";
+
+"142160267298" -> "142160267304";
+
+"142160267322" -> "142160267331";
+
+"142160267316" -> "142160267319";
+
+"142160267307" -> "142160267319";
+
+"142160267301" -> "142160267304";
+"142160267304" -> "142160267331" [dir="both"];
+
+"142160267310" -> "142160267313";
+
+
+}

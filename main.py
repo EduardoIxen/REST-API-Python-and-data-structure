@@ -1,7 +1,7 @@
 from Data_Structures.ABB import ABB
 from Analyzer.Parser import parse
 from Controller.LoadData import load_student
-from Grafo.ABB_Graph import ABB_Graph
+from Graph.ABB_Graph import ABB_Graph
 from Controller.GenerateReport import make_report
 
 from Data_Structures.Double_Linked_List import Double_Linked_List
