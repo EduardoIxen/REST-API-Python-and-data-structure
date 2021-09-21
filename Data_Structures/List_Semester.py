@@ -21,5 +21,11 @@ class List_Semester(Double_Linked_List):
             else:
                 print(f"ADVERTENCIA// El semestre {number}, ya existe en la lista enlazada. (No se volvio a agregar)")
 
-    def search(self):
-        pass
+    def search(self, semester):
+        if self.first is not None:
+            if self.first.data.number == semester:
+                return self.first
+        if self.last is not None:
+            if self.last.data.number == semester:
+                return self.last
+        return None

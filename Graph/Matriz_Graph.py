@@ -76,7 +76,7 @@ class Matrix_Graph:
                     cabeceraFila + enlacesElementosFila + \
                     enlacesElementosColumna + "\n}\n"
 
-        s = Source(acumInfo, filename="matrix", format="svg")
+        s = Source(acumInfo, filename="./Report/matrix", format="svg")
         s.view()
 
 

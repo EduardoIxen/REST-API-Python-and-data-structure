@@ -1,6 +1,7 @@
-/__pycache__/
-/parser.out
-/parsetab.py
+/Analyzer/__pycache__/
+/Controller/__pycache__/
+/Analyzer/parser.out
+/Analyzer/parsetab.py
 /Report/
 /data.txt
 *.pyc

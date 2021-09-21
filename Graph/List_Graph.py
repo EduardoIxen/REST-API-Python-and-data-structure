@@ -14,7 +14,9 @@ class List_Graph:
     def through_list(self, first, dot):
         temp = first
         while temp is not None:
-            content = temp.carnet + "\n" + temp.name
+            content = "Carnet: " + temp.carnet + "\n" + "Nombre: " + temp.name + "\n" + "Descripcion: " + temp.description + \
+                      "\n" + "Curso: " + temp.course + "\n" + "Fecha: " + temp.date + "\n" + "Hora: " + temp.hour + "\n" + \
+                      "Estado: " + temp.status
             dot.node(str(hash(temp)), content)
             if temp.next is not None:
                 dot.edge(str(hash(temp)), str(hash(temp.next)), dir="both")

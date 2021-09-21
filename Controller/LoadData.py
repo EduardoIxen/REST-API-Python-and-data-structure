@@ -1,7 +1,7 @@
 from Obj.Student import Student
 from Obj.Task import Task
 from Data_Structures.List_Year import List_Year
-from Graph.Matriz_Graph import Matrix_Graph
+from Obj.Course import Course
 
 def load_student(tree_student, list_value):
     list_task = []
@@ -62,3 +62,19 @@ def load_student(tree_student, list_value):
             node_monthstd.data.sparse_matrix.add_task(hourF[0], list_date[0], task)
         else:
             print("Student not founf: ", task.carnet)
+
+
+def load_course(tree_student, content):
+    for studentC in content['Estudiantes']:
+        node_student = tree_student.search(studentC['Carnet'])
+        if node_student is None:
+            return {"Error":"Estudiante no encontrado."}, 404
+        student_founf = node_student.student
+        for yearC in studentC['Años']:
+            student_founf.list_year.insert(yearC['Año'])
+            for semester in yearC['Semestres']:
+                student_founf.list_year.search(yearC['Año']).data.list_semesters.insert(semester['Semestre'])
+                for course in semester['Cursos']:
+                    b_tree_found = student_founf.list_year.search(yearC['Año']).data.list_semesters.search(semester['Semestre']).data.binary_tree
+                    b_tree_found.insert(Course(int(course['Codigo']), course['Nombre'], course['Creditos'], course['Prerequisitos'], course['Obligatorio']))
+    return {"Exito": "Archivo cargado correctamente"}, 201
