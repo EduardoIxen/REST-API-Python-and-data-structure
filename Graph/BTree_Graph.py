@@ -2,8 +2,9 @@ import queue
 from graphviz import Source
 
 
-def graphTree(root):
-    accumulated = ["digraph G\n{\nnode[shape = record, height= .1];\n", "", 0, 0]
+def graphTree(root, title):
+    titulo = "labelloc = \"t\";label = \"ARBOL B DE CURSOS "+title+"\";fontsize = \"22\";"
+    accumulated = ["digraph G\n{\nnode[shape = record, height= .1];\n"+titulo+"\n", "", 0, 0]
     if root is not None:
         _queue = queue.Queue()
         _queue.put(root)

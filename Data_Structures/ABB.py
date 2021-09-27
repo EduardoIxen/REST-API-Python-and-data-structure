@@ -81,6 +81,7 @@ class ABB:
 
     def delete_student(self, carnet):
         self.root = self.delete_student2(self.root, carnet)
+        #self.balance_tree()
 
     def delete_student2(self, root, carnet):
         if root is None:
@@ -100,8 +101,8 @@ class ABB:
             return None
 
             # para un nodo con un solo hijo
-        if root.right.root is None:
-            temp = root.rigth.root
+        if root.left.root is None:
+            temp = root.right.root
             root = None
             return temp
 

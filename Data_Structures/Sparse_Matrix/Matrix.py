@@ -3,6 +3,7 @@ from Obj.Hour import Hour
 from Data_Structures.Sparse_Matrix.Header import Header
 from Data_Structures.Sparse_Matrix.List_Task import List_Task
 
+
 class Matrix:
     def __init__(self):
         self.head_row = Header()
@@ -141,3 +142,67 @@ class Matrix:
         ls_task = List_Task()
         ls_task.insert(_hour, _day, _task)
         return ls_task
+
+    def update_task(self, _hour, _day, task):
+        list_task = self.search_list(_day, _hour)
+        if isinstance(list_task, tuple):
+            return list_task[0], list_task[1]  #retur dict error
+        temp = list_task.first
+        count = 1
+        while temp is not None:
+            if int(task['Posicion']) == count:
+                temp.carnet = task['Carnet']
+                temp.name = task['Nombre']
+                temp.description = task['Descripcion']
+                temp.course = task['Materia']
+                temp.date = task['Fecha']
+                temp.hour = task['Hora']
+                temp.status = task['Estado']
+                return {"Exito":"Recordatorio modificado correctemente."},201
+            count += 1
+            temp = temp.next
+        return {"Warning":"Tarea no encontrada."}, 404
+
+    def view_task(self, _hour, _day, position):
+        list_task = self.search_list(_day, _hour)
+        if isinstance(list_task, tuple):
+            return list_task[0], list_task[1]  #return dict error
+        temp = list_task.first
+        dicTask = {}
+        pos = 1
+        while temp is not None:
+            if pos == position:
+                dicTask['Carnet'] = temp.carnet
+                dicTask['Nombre'] = temp.name
+                dicTask['Descripcion'] = temp.description
+                dicTask['Curso'] = temp.course
+                dicTask['Fecha'] = temp.date
+                dicTask['Hora'] = temp.hour
+                dicTask['Esado'] = temp.status
+                return dicTask
+            pos += 1
+            temp = temp.next
+        return None
+
+    def search_list(self, _day, _hour):
+        if self.head_column.first is None:
+            return {"Error":"Matriz vacia."}, 404
+        get_day = self.head_column.search(_day)
+        if get_day is None:
+            return {"Error":"Dia no encontrado."}, 404
+        temp = get_day.down
+        while temp is not None:
+            if temp.row == _hour:
+                if temp.first is not None:
+                    return temp
+                else:
+                    return {"Error":"Lista de tareas vacia."}, 404
+            temp = temp.down
+        return {"Error": "Hora no encontrado."}, 404
+
+    def delete_list(self, _day, _hour, position):
+        node_list = self.search_list(_day, _hour)
+        if isinstance(node_list, tuple):
+            return node_list[0], node_list[1]  #return dict error
+
+        return node_list.delete_task(position)

@@ -45,7 +45,7 @@ class List_Month(Double_Linked_List):
     def search(self, month):
         aux = self.first
         while aux is not None:
-            if aux.data.numberM == str(month):
+            if aux.data.numberM == month:#cambiar string a int
                 return aux
             aux = aux.next
 

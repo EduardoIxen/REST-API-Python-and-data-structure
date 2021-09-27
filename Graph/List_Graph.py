@@ -7,6 +7,9 @@ class List_Graph:
     def graph_list(self, first):
         dot = Digraph(filename="list_task",format="svg")
         dot.graph_attr["rankdir"] = "LR"
+        dot.graph_attr["labelloc"] = "t"
+        dot.graph_attr["label"] = "LISTA DE TAREAS"
+        dot.graph_attr["fontsize"] = "22"
         dot.attr('node', shape='rectangle')
         self.through_list(first, dot)
         dot.render("./Report/list_task", view=True)

@@ -11,7 +11,10 @@ class Matrix_Graph:
         node[shape=box, width = 1.5, style=filled, color=SpringGreen3];
         edge[color=black];
         rankdir=UD;
-        Matriz[label="Matriz", width = 1.5, style = filled, fillcolor = MediumOrchid1, gropu = fila];\n"""
+        Matriz[label="Matriz", width = 1.5, style = filled, fillcolor = MediumOrchid1, gropu = fila];
+        labelloc="t";
+        label = "DIAS";
+        fontsize="22";\n"""
 
         idCabeceraFila = ""
         cabeceraFila = ""

@@ -1,5 +1,4 @@
 from Data_Structures.Double_Linked_List import Double_Linked_List
-from Data_Structures.NodeList import NodeList
 from Data_Structures.Sparse_Matrix.NodeM import NodeM
 
 class List_Task(Double_Linked_List, NodeM):
@@ -12,7 +11,6 @@ class List_Task(Double_Linked_List, NodeM):
     def insert(self, row, column, task):
         self.row = row
         self.column = column
-        #new_node = NodeList(task)
         if self.first is None:
             self.first = task
             self.last = task
@@ -22,6 +20,40 @@ class List_Task(Double_Linked_List, NodeM):
             task.previous = self.last
             self.last = task
             self.size += 1
+
+    def delete_task(self, position):
+        if position == 1:
+            if self.first.next is not None:
+                self.first.next.previous = None
+                self.first = self.first.next
+                self.size -= 1
+                return True
+            else:
+                self.first = None
+                self.last = None
+                self.size = 0
+            return True
+        if position == self.size:
+            new_last = self.last.previous
+            new_last.next = None
+            self.last = new_last
+            self.size -= 1
+            return True
+
+        temp = self.first
+        count = 1
+        while temp is not None:
+            if position == count:
+                if temp.next is not None:
+                    if temp.previous is not None:
+                        temp.previous.next = temp.next
+                        temp.next.previous = temp.previous
+                        self.size -= 1
+                        return True
+
+            count += 1
+            temp = temp.next
+        return False
 
     def search(self):
         pass

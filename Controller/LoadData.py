@@ -55,11 +55,11 @@ def load_student(tree_student, list_value):
         if node_student is not None:
             student = node_student.student
             list_date = task.date.strip().split(sep="/")
-            student.list_year.insert(list_date[2])
-            student.list_year.search(list_date[2]).data.list_months.insert(list_date[1])
-            node_monthstd = student.list_year.search(list_date[2]).data.list_months.search(list_date[1])
+            student.list_year.insert(int(list_date[2]))
+            student.list_year.search(int(list_date[2])).data.list_months.insert(int(list_date[1]))
+            node_monthstd = student.list_year.search(int(list_date[2])).data.list_months.search(int(list_date[1]))
             hourF = task.hour.strip().split(sep=":")
-            node_monthstd.data.sparse_matrix.add_task(hourF[0], list_date[0], task)
+            node_monthstd.data.sparse_matrix.add_task(int(hourF[0]), int(list_date[0]), task)
         else:
             print("Student not founf: ", task.carnet)
 
@@ -71,10 +71,10 @@ def load_course(tree_student, content):
             return {"Error":"Estudiante no encontrado."}, 404
         student_founf = node_student.student
         for yearC in studentC['Años']:
-            student_founf.list_year.insert(yearC['Año'])
+            student_founf.list_year.insert(int(yearC['Año']))
             for semester in yearC['Semestres']:
-                student_founf.list_year.search(yearC['Año']).data.list_semesters.insert(semester['Semestre'])
+                student_founf.list_year.search(int(yearC['Año'])).data.list_semesters.insert(semester['Semestre'])
                 for course in semester['Cursos']:
-                    b_tree_found = student_founf.list_year.search(yearC['Año']).data.list_semesters.search(semester['Semestre']).data.binary_tree
+                    b_tree_found = student_founf.list_year.search(int(yearC['Año'])).data.list_semesters.search(semester['Semestre']).data.binary_tree
                     b_tree_found.insert(Course(int(course['Codigo']), course['Nombre'], course['Creditos'], course['Prerequisitos'], course['Obligatorio']))
-    return {"Exito": "Archivo cargado correctamente"}, 201
+    return {"Exito": "Archivo de cursos de estudiantes cargado correctamente"}, 201
