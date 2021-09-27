@@ -34,12 +34,12 @@ def __print(current, accumulated):
     i = 1
     while i <= current.count:
         if current.keys[i].code == 13:
-            print("sdp")
+            pass
         accumulated[0] += '|<c{}> {} |<r{}>'.format(str(i),str(current.keys[i].code) +'\\n'+current.keys[i].name, str(i))
 
         if current.leaf[i] is not None:
             accumulated[3] += 1
             accumulated[1] += '"node{}":r{} -> "node{}"\n'.format(str(accumulated[2]) ,str(i), str(accumulated[3]))
         i += 1
-    accumulated[0] += '"];\n';
+    accumulated[0] += '"];\n'
 

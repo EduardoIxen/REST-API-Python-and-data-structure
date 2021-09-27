@@ -47,7 +47,7 @@ class Matrix_Graph:
                 enlacesElementosFila += infoFilas[2] + "\n"
 
                 idCabeceraFila += '"{}"[label = "{}",width = 1.5, group=fila, style=filled, color=DarkOrange1];\n'.format(
-                    str(hash(eFila)), str(eFila.getValue()))
+                    str(hash(eFila)), str(eFila.getValue())+":00")
                 if eFila.next != None:
                     # filas
                     cabeceraFila += '"{}" -> "{}" [dir="both"];\n'.format(str(hash(eFila)), str(hash(eFila.next)))

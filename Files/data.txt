@@ -293,7 +293,7 @@
 		¿item Nombre = "practica edd" $?
 		¿item Descripcion = "terminar la practica" $?
 		¿item Materia = "Estructuras de datos" $?
-		¿item Fecha = "28/8/2021" $?
+		¿item Fecha = "31/6/2021" $?
 		¿item Hora = "15:00" $?
 		¿item Estado = "Incumplido" $?
 	¿$element?

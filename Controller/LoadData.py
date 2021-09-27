@@ -3,6 +3,7 @@ from Obj.Task import Task
 from Data_Structures.List_Year import List_Year
 from Obj.Course import Course
 
+
 def load_student(tree_student, list_value):
     list_task = []
     for data in list_value:
@@ -55,10 +56,17 @@ def load_student(tree_student, list_value):
         if node_student is not None:
             student = node_student.student
             list_date = task.date.strip().split(sep="/")
+            hourF = task.hour.strip().split(sep=":")
+            if int(list_date[0]) < 1 or int(list_date[0]) > get_days_month(int(list_date[1]), int(list_date[2])):
+                print("Dia fuera de rango valido.")
+                continue
+            if int(hourF[0]) < 0 or int(hourF[0]) > 24:
+                print("Hora fuera del rango valido.")
+                continue
+
             student.list_year.insert(int(list_date[2]))
             student.list_year.search(int(list_date[2])).data.list_months.insert(int(list_date[1]))
             node_monthstd = student.list_year.search(int(list_date[2])).data.list_months.search(int(list_date[1]))
-            hourF = task.hour.strip().split(sep=":")
             node_monthstd.data.sparse_matrix.add_task(int(hourF[0]), int(list_date[0]), task)
         else:
             print("Student not founf: ", task.carnet)
@@ -78,3 +86,22 @@ def load_course(tree_student, content):
                     b_tree_found = student_founf.list_year.search(int(yearC['Año'])).data.list_semesters.search(semester['Semestre']).data.binary_tree
                     b_tree_found.insert(Course(int(course['Codigo']), course['Nombre'], course['Creditos'], course['Prerequisitos'], course['Obligatorio']))
     return {"Exito": "Archivo de cursos de estudiantes cargado correctamente"}, 201
+
+
+def leap_year(year):
+    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+
+
+def get_days_month(month, year):
+    #April, June, September, December -> 30 days
+    if month in [4, 6, 9, 12]:
+        return 30
+    #February verify leap year
+    if month == 2:
+        if leap_year(year):
+            return 29
+        else:
+            return 28
+    else:
+        return 31
+

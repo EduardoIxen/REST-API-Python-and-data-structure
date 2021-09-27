@@ -1,4 +1,5 @@
 from Obj.Task import Task
+from Controller.LoadData import get_days_month
 
 
 def create_task(tree_student, req):
@@ -7,10 +8,15 @@ def create_task(tree_student, req):
         return {"Warning": f"Estudiante no encontrado -> {req['carnet']}"}, 404
     student = node_student.student
     list_date = req['Fecha'].strip().split(sep="/")
+    hour = req['Hora'].strip().split(sep=":")
+    if int(list_date[0]) < 1 or int(list_date[0]) > get_days_month(int(list_date[1]), int(list_date[2])):
+        return {"Error": "Dia fuera del rango valido."}
+    if int(hour[0]) < 0 or int(hour[0]) > 24:
+        return {"Error": "Hora fuera del rango valido."}
+
     student.list_year.insert(int(list_date[2]))
     student.list_year.search(int(list_date[2])).data.list_months.insert(int(list_date[1]))
     node_monthstd = student.list_year.search(int(list_date[2])).data.list_months.search(int(list_date[1]))
-    hour = req['Hora'].strip().split(sep=":")
     new_task = Task(req['Carnet'], req['Nombre'], req['Descripcion'], req['Materia'], req['Fecha'], req['Hora'], req['Estado'])
     node_monthstd.data.sparse_matrix.add_task(int(hour[0]), int(list_date[0]), new_task)
     return {"Exito": "Recordatorio creado correctamente"}, 201

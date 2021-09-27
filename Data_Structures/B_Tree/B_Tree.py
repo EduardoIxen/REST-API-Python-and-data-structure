@@ -53,7 +53,7 @@ class B_Tree:
             # (por si viene un valor a los que hay en le nodo )
             while (value.code < actual_page.keys[way[0]].code) and (way[0] > 1):
                 way[0] = way[0] - 1
-            found = value == actual_page.keys[way[0]]
+            found = value.code == actual_page.keys[way[0]].code
         return found
 
     def push_leaf(self, current, value, rd, k):
