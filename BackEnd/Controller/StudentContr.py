@@ -47,3 +47,13 @@ def get_student(tree_student, req):
             "Creditos":f"{student_found.credits}",
             "Edad":f"{student_found.age}"
             }
+
+def login_controller(tree_student, req):
+    if req['user'] == "admin" and req['password'] == "admin":
+        return {'message': 'Bienvenido admin', 'type':'admin', }, 200
+    else:
+        login_result = tree_student.search_login(tree_student.root, req['user'], req['password'])
+        if login_result:
+            return {'message': 'Bienvenido estudiante', 'type': 'student', }, 200
+        else:
+            return {'message':'Usuario o contraseña incorrectos.'}, 400

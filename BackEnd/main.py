@@ -3,7 +3,7 @@ from Data_Structures.ABB import ABB
 from Analyzer.Parser import parse
 from Controller.LoadData import load_student, load_course
 from Controller.GenerateReport import make_report
-from Controller.StudentContr import create_student, modify_student, delete_student, get_student
+from Controller.StudentContr import create_student, modify_student, delete_student, get_student, login_controller
 from Controller.TaskContr import create_task, modify_task, get_task, delete_task
 from Controller.CourseContr import add_course_student, add_course_pensum
 from Data_Structures.B_Tree.B_Tree import B_Tree
@@ -140,7 +140,8 @@ def login():
     if request.is_json:
         print("usuario:",req["user"])
         print("contra:",req["password"])
-        return jsonify({'message':'Logeado correctemente'}), 200
+        #return jsonify({'message':'Logeado correctemente'}), 200
+        return login_controller(tree_student, req)
 
 
 if __name__ == '__main__':

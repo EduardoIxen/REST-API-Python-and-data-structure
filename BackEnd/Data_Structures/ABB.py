@@ -163,3 +163,14 @@ class ABB:
             return self.search2(local_root.right.root, key)
         return self.search2(local_root.left.root, key)
 
+    def search_login(self, root, key, password):
+        if root is None:
+            return False
+        elif root.student.carnet == key and root.student.password == password:
+            return True
+        elif root.student.carnet > key:
+            value = self.search_login(root.left.root, key, password)
+            return value
+        else:
+            value = self.search_login(root.right.root, key, password)
+            return value

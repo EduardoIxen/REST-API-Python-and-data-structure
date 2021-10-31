@@ -2,49 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e51608-9f52-4a7f-bbd8-3d349c810d34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Edd_SmartClass.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Edd_SmartClass.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analyzer/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analyzer/Lexer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analyzer/Parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analyzer/parser.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analyzer/parsetab.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/CourseContr.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/GenerateReport.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/LoadData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/StudentContr.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/TaskContr.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/ABB.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/B_Tree/B_Tree.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/B_Tree/Page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/Double_Linked_List.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/List_Month.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/List_Semester.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/List_Year.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/NodeList.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/NodeTreeAvl.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/Sparse_Matrix/Header.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/Sparse_Matrix/List_Task.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/Sparse_Matrix/Matrix.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Structures/Sparse_Matrix/NodeM.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/CursosEstudiante.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/CursosPensum.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graph/ABB_Graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graph/BTree_Graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graph/List_Graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graph/Matriz_Graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Course.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Day.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Hour.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Month.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Semester.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Student.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Task.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Year.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Controller/StudentContr.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controller/StudentContr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Data_Structures/ABB.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Data_Structures/ABB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/login/login.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,15 +105,26 @@
       <workItem from="1635403614955" duration="6983000" />
       <workItem from="1635493062169" duration="1094000" />
       <workItem from="1635548868516" duration="10264000" />
-      <workItem from="1635639065771" duration="1978000" />
+      <workItem from="1635639065771" duration="5892000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/BackEnd/Data_Structures/ABB.py</url>
+          <line>168</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Edd_SmartClass$Edd_SmartClass.coverage" NAME="Edd_SmartClass Coverage Results" MODIFIED="1635639293136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BackEnd" />
+    <SUITE FILE_PATH="coverage/Edd_SmartClass$Edd_SmartClass.coverage" NAME="Edd_SmartClass Coverage Results" MODIFIED="1635649387924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BackEnd" />
     <SUITE FILE_PATH="coverage/Edd_SmartClass$Flask__BackEnd_main_py_.coverage" NAME="Flask (BackEnd/main.py) Coverage Results" MODIFIED="1635405165233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
 
   messageOk = null;
   messageError = null;
-  sessionOk = false
 
   constructor(private rest: RestService, private route: Router){}
 
@@ -36,8 +35,12 @@ export class LoginComponent implements OnInit {
       this.credentials.password = "";
       this.messageOk = res.message;
       console.log("llego")
-      await this.route.navigate(['/','homeStudent']);
-      this.sessionOk = true
+      if (res.type == "admin"){
+        await this.route.navigate(['/homeAdmin'])
+      }
+      if(res.type == "student"){
+        await this.route.navigate(['/','homeStudent']);
+      }
 
     } catch (error:any) {
       this.messageError = error.error.message;
