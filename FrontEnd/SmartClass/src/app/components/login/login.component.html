@@ -1,0 +1,28 @@
+<app-menuhome></app-menuhome>
+<div class="div card">
+  <div class="card-body">
+    <div class="card-title">
+      Login
+    </div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="messageOk != null">
+      <strong>{{messageOk}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert1()"></button>
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="messageError != null">
+      <strong>{{messageError}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert2()"></button>
+    </div>
+
+    <div class="form-group mt-2">
+      <input type="text" class="form-control" placeholder="Nombre de usuario" [(ngModel)]="credentials.user">
+    </div>
+    <div class="form-group mt-2">
+      <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="credentials.password">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary mt-2" (click)="login()">
+        Ingresar
+      </button>
+    </div>
+  </div>
+</div>

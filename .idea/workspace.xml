@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d9e51608-9f52-4a7f-bbd8-3d349c810d34" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Edd_SmartClass.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Edd_SmartClass.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analyzer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analyzer/Lexer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analyzer/Parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analyzer/parser.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analyzer/parsetab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CourseContr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/GenerateReport.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/LoadData.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/StudentContr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/TaskContr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/ABB.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/B_Tree/B_Tree.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/B_Tree/Page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/Double_Linked_List.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/List_Month.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/List_Semester.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/List_Year.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/NodeList.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/NodeTreeAvl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/Sparse_Matrix/Header.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/Sparse_Matrix/List_Task.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/Sparse_Matrix/Matrix.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Structures/Sparse_Matrix/NodeM.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/CursosEstudiante.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/CursosPensum.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graph/ABB_Graph.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graph/BTree_Graph.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graph/List_Graph.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graph/Matriz_Graph.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Course.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Day.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Hour.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Month.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Semester.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Student.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Task.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Year.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1zvYSkJQ8H2AqhG1Pp6qGufUDUe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BackEnd/main.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="ts.external.directory.path" value="C:\Users\tomas\PycharmProjects\Edd_SmartClass\FrontEnd\SmartClass\node_modules\typescript\lib" />
+  </component>
+  <component name="RunManager" selected="Python.Edd_SmartClass">
+    <configuration name="Edd_SmartClass" type="PythonConfigurationType" factoryName="Python">
+      <module name="Edd_SmartClass" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BackEnd" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BackEnd/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flask (BackEnd/main.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+      <module name="Edd_SmartClass" />
+      <option name="target" value="$PROJECT_DIR$/BackEnd/main.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Flask server.Flask (BackEnd/main.py)" />
+      <item itemvalue="Python.Edd_SmartClass" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flask server.Flask (BackEnd/main.py)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9e51608-9f52-4a7f-bbd8-3d349c810d34" name="Default Changelist" comment="" />
+      <created>1635030050500</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635030050500</updated>
+      <workItem from="1635030053647" duration="643000" />
+      <workItem from="1635056011621" duration="1885000" />
+      <workItem from="1635143767454" duration="3899000" />
+      <workItem from="1635186540989" duration="2012000" />
+      <workItem from="1635201276587" duration="257000" />
+      <workItem from="1635205416473" duration="527000" />
+      <workItem from="1635403614955" duration="6983000" />
+      <workItem from="1635493062169" duration="1094000" />
+      <workItem from="1635548868516" duration="10264000" />
+      <workItem from="1635639065771" duration="1978000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Edd_SmartClass$Edd_SmartClass.coverage" NAME="Edd_SmartClass Coverage Results" MODIFIED="1635639293136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BackEnd" />
+    <SUITE FILE_PATH="coverage/Edd_SmartClass$Flask__BackEnd_main_py_.coverage" NAME="Flask (BackEnd/main.py) Coverage Results" MODIFIED="1635405165233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
