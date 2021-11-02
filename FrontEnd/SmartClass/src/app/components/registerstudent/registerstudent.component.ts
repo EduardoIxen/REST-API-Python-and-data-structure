@@ -48,11 +48,11 @@ export class RegisterstudentComponent implements OnInit {
     this.route.navigate(["login"])
   }
 
-  cerrarAlert1() {
+  closeAlert1() {
     this.messageOk = null;
   }
 
-  cerrarAlert2() {
+  closeAlert2() {
     this.messageError = null;
   }
 

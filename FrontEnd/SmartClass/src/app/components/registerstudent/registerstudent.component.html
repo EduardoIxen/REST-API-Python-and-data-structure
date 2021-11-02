@@ -1,5 +1,12 @@
 <app-menuhome></app-menuhome>
-
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="messageOk != null">
+  <strong>{{messageOk}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert1()"></button>
+</div>
+<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="messageError != null">
+  <strong>{{messageError}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert2()"></button>
+</div>
 <div class="container">
   <div class="py-2 d-flex justify-content-center">
     <div>

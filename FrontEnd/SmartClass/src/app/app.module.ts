@@ -13,6 +13,7 @@ import { HomeadminComponent } from './components/homeadmin/homeadmin.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterstudentComponent } from './components/registerstudent/registerstudent.component';
 import { MenuhomeComponent } from './components/menuhome/menuhome.component';
+import { LoadfileComponent } from './components/loadfile/loadfile.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MenuhomeComponent } from './components/menuhome/menuhome.component';
     LoginComponent,
     RegisterstudentComponent,
     MenuhomeComponent,
+    LoadfileComponent,
   ],
   imports: [
     FormsModule,
