@@ -36,9 +36,13 @@ export class LoginComponent implements OnInit {
       this.messageOk = res.message;
       console.log("llego")
       if (res.type == "admin"){
+        this.rest.setToken("admin123123")
         await this.route.navigate(['/homeAdmin'])
       }
       if(res.type == "student"){
+        this.rest.setToken(res.token);
+        console.log(res.user);
+        this.rest.setUserLogged(res.user);
         await this.route.navigate(['/','homeStudent']);
       }
 

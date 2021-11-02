@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterstudentComponent } from './components/registerstudent/registerstudent.component';
 import { MenuhomeComponent } from './components/menuhome/menuhome.component';
 import { LoadfileComponent } from './components/loadfile/loadfile.component';
+import {CookieService} from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoadfileComponent } from './components/loadfile/loadfile.component';
   ],
   providers: [
     //agregar mis servicios
-    RestService
+    RestService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

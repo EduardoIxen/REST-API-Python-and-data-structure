@@ -1,16 +1,26 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Estudiante</a>
+    <a class="navbar-brand" routerLink="/homeStudent">Estudiante</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" routerLink="/registerStd">Registro</a>
+        <a class="nav-link active" aria-current="page" routerLink="/">Registro</a>
         <!--<a class="nav-link" href="#">Features</a>
         <a class="nav-link" href="#">Pricing</a>
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
       </div>
+      <div class="nav-item dropdown ms-auto">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{nameUser}}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
+<!--            <li><a class="dropdown-item" href="#">Action</a></li>-->
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logout()">Salir</a></li>
+          </ul>
+        </div>
     </div>
   </div>
 </nav>
