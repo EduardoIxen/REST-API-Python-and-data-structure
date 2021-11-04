@@ -8,19 +8,17 @@ import {Router} from "@angular/router";
   styleUrls: ['./menustudent.component.css']
 })
 export class MenustudentComponent implements OnInit {
-  nameUser = "";
+  nameUser: string | null = "";
   constructor(private rest: RestService, private route: Router) { }
 
   ngOnInit(): void {
-    if (this.rest.getUserLogged() != null){
-      // @ts-ignore
-      this.nameUser = this.rest.getUserLogged().name;
-    }
+      this.nameUser = localStorage.getItem("name");
   }
 
   logout(){
     this.rest.logout();
-    this.route.navigate(['/login'])
+    localStorage.clear();
+    this.route.navigate(['/login']);
   }
 
 }

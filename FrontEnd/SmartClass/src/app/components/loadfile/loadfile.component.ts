@@ -75,7 +75,13 @@ export class LoadfileComponent implements OnInit {
         this.objectSend.contenido = "";
         this.messageOk = response.message;
       }else if(this.idSelectedType == 4){
-        console.log("carga de apuntes")
+        console.log("carga de apuntes");
+        this.objectSend.tipo = "apuntes";
+        this.objectSend.contenido = this.pathFile;
+        var response = await this.rest.PostRequest("loadNotes", this.objectSend).toPromise();
+        this.objectSend.tipo = "";
+        this.objectSend.contenido = "";
+        this.messageOk = response.message;
       }
       //var response = await this.rest.PostRequest("")
     }catch (e: any) {

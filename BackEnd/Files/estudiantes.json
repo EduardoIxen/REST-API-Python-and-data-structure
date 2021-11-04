@@ -1,0 +1,65 @@
+{
+    "estudiantes":[
+        {
+            "carnet":201800524,
+            "DPI":2097615549301,
+            "nombre":"Eduardo Tomas",
+            "carrera":"ing. ciencias y sistemas",
+            "correo":"jorge@gmial.com",
+            "password":"asd",
+            "creditos": 120,
+            "edad":26
+
+        },
+        {
+            "carnet":20210000002,
+            "DPI":9251761540101,
+            "nombre":"Carlos",
+            "carrera":"ing. ciencias y sistemas",
+            "correo":"carlos@gmial.com",
+            "password":"yuWfo94",
+            "creditos": 12,
+            "edad":26
+        },
+        {
+            "carnet":20210000003,
+            "DPI":900000000101,
+            "nombre":"juan",
+            "carrera":"ing. ciencias y sistemas",
+            "correo":"juan@gmial.com",
+            "password":"yud5asd4",
+            "creditos": 130,
+            "edad":20
+        },
+        {
+            "carnet":20210000004,
+            "DPI":920000000101,
+            "nombre":"Luis",
+            "carrera":"ing. ciencias y sistemas",
+            "correo":"Luis@gmial.com",
+            "password":"sdfadf5er1",
+            "creditos": 250,
+            "edad":21
+        },
+        {
+            "carnet":"201901423",
+            "DPI":3109222211223,
+            "nombre":"Pedro",
+            "carrera":"ing. ambiental",
+            "correo":"pdrro@gmial.com",
+            "password":"sdfadf5er1",
+            "creditos": 250,
+            "edad":21
+        },
+        {
+            "carnet":"201722412",
+            "DPI":1222112233445,
+            "nombre":"Juan",
+            "carrera":"ing. ciencias y sistemas",
+            "correo":"juann@gmial.com",
+            "password":"sdfadf5er1",
+            "creditos": 250,
+            "edad":21
+        }
+    ]
+}

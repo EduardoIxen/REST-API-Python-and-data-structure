@@ -1,3 +1,5 @@
+import json
+
 from Obj.Student import Student
 from Obj.Task import Task
 from Data_Structures.List_Year import List_Year
@@ -72,11 +74,26 @@ def load_student(tree_student, list_value):
             print("Student not founf: ", task.carnet)
 
 
+def load_student_frontend(tree_student, list_values):
+    for student in list_values['estudiantes']:
+        carnet = str(student['carnet'])
+        dpi = str(student['DPI'])
+        name = student['nombre']
+        degree = student['carrera']
+        email = student['correo']
+        password = student['password']
+        credits = student['creditos']
+        age = student['edad']
+        newStudent = Student(carnet, dpi, name, degree, email, password, credits, age, List_Year())
+        tree_student.insert(newStudent)
+
+
+
 def load_course(tree_student, content):
     for studentC in content['Estudiantes']:
         node_student = tree_student.search(studentC['Carnet'])
         if node_student is None:
-            return {"Error":"Estudiante no encontrado."}, 404
+            return {"message":"Estudiante no encontrado."}, 404
         student_founf = node_student.student
         for yearC in studentC['Años']:
             student_founf.list_year.insert(int(yearC['Año']))
@@ -85,7 +102,7 @@ def load_course(tree_student, content):
                 for course in semester['Cursos']:
                     b_tree_found = student_founf.list_year.search(int(yearC['Año'])).data.list_semesters.search(semester['Semestre']).data.binary_tree
                     b_tree_found.insert(Course(int(course['Codigo']), course['Nombre'], course['Creditos'], course['Prerequisitos'], course['Obligatorio']))
-    return {"Exito": "Archivo de cursos de estudiantes cargado correctamente"}, 201
+    return {"message": "Archivo de cursos de estudiantes cargado correctamente"}, 201
 
 
 def leap_year(year):

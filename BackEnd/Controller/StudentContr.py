@@ -6,7 +6,7 @@ def create_student(tree_student, req):
     tree_student.insert(Student(req['carnet'], req['DPI'], req['nombre'], req['carrera'], req['correo'], req['password']
                                 , req['creditos'], req['edad'], List_Year()))
 
-    return {"Exito":"Estudiante creado correctamente"}, 201
+    return {"message":"Estudiante creado correctamente"}, 201
 
 
 def modify_student(tree_student, req):
@@ -54,6 +54,19 @@ def login_controller(tree_student, req):
     else:
         login_result = tree_student.search_login(tree_student.root, req['user'], req['password'])
         if login_result:
-            return {'message': 'Bienvenido estudiante', 'type': 'student', }, 200
+            student = tree_student.search(str(req['user'])).student
+            return {'message': 'Bienvenido estudiante',
+                    'type': 'student',
+                    "token": str(student.name + student.dpi),
+                    "user": {
+                        "carnet": student.carnet,
+                        "dpi": student.dpi,
+                        "name": student.name,
+                        "email": student.email,
+                        "credits": student.credits,
+                        "degree": student.degree,
+                        "age": student.age
+                    }
+                    }, 200
         else:
             return {'message':'Usuario o contraseña incorrectos.'}, 400

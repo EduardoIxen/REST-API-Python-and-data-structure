@@ -7,6 +7,7 @@ import {MenustudentComponent} from "./components/menustudent/menustudent.compone
 import {LoginComponent} from "./components/login/login.component";
 import {RegisterstudentComponent} from "./components/registerstudent/registerstudent.component";
 import {LoadfileComponent} from "./components/loadfile/loadfile.component";
+import {NotesStudentComponent} from "./components/notes-student/notes-student.component";
 
 //agregar todas las rutas del proyecto
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: "registerStd", component: RegisterstudentComponent},
   {path: "homeStudent", component: HomestudentComponent},
   {path: "homeAdmin", component: HomeadminComponent},
-  {path: "loadFile", component: LoadfileComponent}
+  {path: "loadFile", component: LoadfileComponent},
+  {path: "notesStudent", component: NotesStudentComponent}
 ];
 
 @NgModule({

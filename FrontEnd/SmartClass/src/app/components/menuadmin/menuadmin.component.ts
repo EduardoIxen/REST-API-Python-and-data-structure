@@ -16,6 +16,7 @@ export class MenuadminComponent implements OnInit {
 
   logout(){
     this.rest.logout();
+    localStorage.clear()
     this.route.navigate(['/login']);
   }
 

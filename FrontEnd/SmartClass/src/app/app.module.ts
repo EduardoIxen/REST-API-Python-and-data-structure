@@ -15,6 +15,7 @@ import { RegisterstudentComponent } from './components/registerstudent/registers
 import { MenuhomeComponent } from './components/menuhome/menuhome.component';
 import { LoadfileComponent } from './components/loadfile/loadfile.component';
 import {CookieService} from "ngx-cookie-service";
+import { NotesStudentComponent } from './components/notes-student/notes-student.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {CookieService} from "ngx-cookie-service";
     RegisterstudentComponent,
     MenuhomeComponent,
     LoadfileComponent,
+    NotesStudentComponent,
   ],
   imports: [
     FormsModule,

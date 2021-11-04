@@ -43,6 +43,13 @@ export class LoginComponent implements OnInit {
         this.rest.setToken(res.token);
         console.log(res.user);
         this.rest.setUserLogged(res.user);
+        localStorage.setItem("carnet", res.user.carnet);
+        localStorage.setItem("dpi", res.user.dpi);
+        localStorage.setItem("name", res.user.name);
+        localStorage.setItem("email", res.user.email);
+        localStorage.setItem("credits", res.user.credits);
+        localStorage.setItem("degree", res.user.degree);
+        localStorage.setItem("age", res.user.age);
         await this.route.navigate(['/','homeStudent']);
       }
 
