@@ -8,6 +8,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {RegisterstudentComponent} from "./components/registerstudent/registerstudent.component";
 import {LoadfileComponent} from "./components/loadfile/loadfile.component";
 import {NotesStudentComponent} from "./components/notes-student/notes-student.component";
+import {HashAdminComponent} from "./components/hash-admin/hash-admin.component";
 
 //agregar todas las rutas del proyecto
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: "homeStudent", component: HomestudentComponent},
   {path: "homeAdmin", component: HomeadminComponent},
   {path: "loadFile", component: LoadfileComponent},
-  {path: "notesStudent", component: NotesStudentComponent}
+  {path: "notesStudent", component: NotesStudentComponent},
+  {path: "hashTable", component: HashAdminComponent}
 ];
 
 @NgModule({

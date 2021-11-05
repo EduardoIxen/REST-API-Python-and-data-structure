@@ -20,4 +20,12 @@ export class MenuadminComponent implements OnInit {
     this.route.navigate(['/login']);
   }
 
+  async generateReport(){
+    try {
+      var response = await this.rest.GetRequest("reportHash").toPromise();
+    }catch (e) {
+      console.log("Error al generar mensaje");
+    }
+  }
+
 }

@@ -34,6 +34,7 @@ export class NotesStudentComponent implements OnInit {
       this.note.carnet = localStorage.getItem("carnet");
       //this.note.carnet = this.rest.getUserLogged().carnet;
       var response = await this.rest.PostRequest("newNote", this.note).toPromise();
+      var response2 = await this.rest.GetRequest("reportHash").toPromise();
       this.note.title = "";
       this.note.content = "";
       this.messageOk = response.message;

@@ -3,17 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e51608-9f52-4a7f-bbd8-3d349c810d34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Controller/CourseContr.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controller/CourseContr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Controller/LoadData.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controller/LoadData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Controller/StudentContr.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controller/StudentContr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Controller/NotesController.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controller/NotesController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Graph/TableHash_Graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Graph/TableHash_Graph.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/loadfile/loadfile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/loadfile/loadfile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menuadmin/menuadmin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menuadmin/menuadmin.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menuadmin/menuadmin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menuadmin/menuadmin.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menustudent/menustudent.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menustudent/menustudent.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menustudent/menustudent.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menustudent/menustudent.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/notes-student/notes-student.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/notes-student/notes-student.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,31 +134,15 @@
       <workItem from="1635959097465" duration="9270000" />
       <workItem from="1635978826269" duration="2398000" />
       <workItem from="1635984847891" duration="5840000" />
-      <workItem from="1636045589275" duration="7560000" />
+      <workItem from="1636045589275" duration="25333000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/BackEnd/Data_Structures/ABB.py</url>
-          <line>161</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/BackEnd/main.py</url>
-          <line>168</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Edd_SmartClass$Edd_SmartClass.coverage" NAME="Edd_SmartClass Coverage Results" MODIFIED="1636046030973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BackEnd" />
+    <SUITE FILE_PATH="coverage/Edd_SmartClass$Edd_SmartClass.coverage" NAME="Edd_SmartClass Coverage Results" MODIFIED="1636077724362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BackEnd" />
     <SUITE FILE_PATH="coverage/Edd_SmartClass$Flask__BackEnd_main_py_.coverage" NAME="Flask (BackEnd/main.py) Coverage Results" MODIFIED="1635405165233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

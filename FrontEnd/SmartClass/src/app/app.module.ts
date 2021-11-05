@@ -16,6 +16,7 @@ import { MenuhomeComponent } from './components/menuhome/menuhome.component';
 import { LoadfileComponent } from './components/loadfile/loadfile.component';
 import {CookieService} from "ngx-cookie-service";
 import { NotesStudentComponent } from './components/notes-student/notes-student.component';
+import { HashAdminComponent } from './components/hash-admin/hash-admin.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NotesStudentComponent } from './components/notes-student/notes-student.
     MenuhomeComponent,
     LoadfileComponent,
     NotesStudentComponent,
+    HashAdminComponent,
   ],
   imports: [
     FormsModule,

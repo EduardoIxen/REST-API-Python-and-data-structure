@@ -79,6 +79,7 @@ export class LoadfileComponent implements OnInit {
         this.objectSend.tipo = "apuntes";
         this.objectSend.contenido = this.pathFile;
         var response = await this.rest.PostRequest("loadNotes", this.objectSend).toPromise();
+        var response2 = await this.rest.GetRequest("reportHash").toPromise();
         this.objectSend.tipo = "";
         this.objectSend.contenido = "";
         this.messageOk = response.message;

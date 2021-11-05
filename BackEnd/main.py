@@ -8,7 +8,7 @@ from Controller.TaskContr import create_task, modify_task, get_task, delete_task
 from Controller.CourseContr import add_course_student, add_course_pensum
 from Data_Structures.B_Tree.B_Tree import B_Tree
 from Data_Structures.Hash_Table.Hash_Table import Hash_Table
-from Controller.NotesController import loadNotes, newNote, notes_student
+from Controller.NotesController import loadNotes, newNote, notes_student, generateGrah
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
@@ -174,6 +174,10 @@ def view_notes(id_student):
     print(id_student)
     return notes_student(id_student, table_notes)
 
+@app.get("/reportHash")
+def reportHash():
+    generateGrah(table_notes)
+    return {"message":"exito"}, 200
 
 
 if __name__ == '__main__':

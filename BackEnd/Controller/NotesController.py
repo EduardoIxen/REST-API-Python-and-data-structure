@@ -1,12 +1,10 @@
 import json
-
+from BackEnd.Graph.TableHash_Graph import TableHash_Graph
 
 def loadNotes(notes_text, hash_table):
     notes = json.loads(notes_text)
     for usuario in notes["usuarios"]:
-        print(usuario['carnet'])
         for apunte in usuario['apuntes']:
-            print(apunte)
             hash_table.insertHash(int(usuario['carnet']), apunte['Título'], apunte['Contenido'])
     return {"message": "Apuntes cargados con exito."}, 200
 
@@ -31,3 +29,8 @@ def notes_student(id, hash_table):
             contador += 1
         temp = temp.next
     return {"message": "Apuntes recuperados", "listNotes":listNotes}, 200
+
+
+def generateGrah(hash_table):
+    newGraph = TableHash_Graph()
+    newGraph.graphTable(hash_table)
