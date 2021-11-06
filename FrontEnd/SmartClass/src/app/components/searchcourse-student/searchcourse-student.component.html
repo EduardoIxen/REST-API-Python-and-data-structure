@@ -1,0 +1,14 @@
+<app-menustudent></app-menustudent>
+<h2 class="text-center">Buscar prerequisitos</h2>
+<div class="container">
+  <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Codigo del curso</label>
+  <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="772" [(ngModel)]="codeCourse">
+  </div>
+  <div class="form-group">
+  <button class="btn btn-primary mt-1" (click)="searchCourse()">
+    Buscar prerequisitos
+  </button>
+</div>
+  <img src="assets/img/graphCourse.svg" class="img-fluid" alt="prerequisitos">
+</div>

@@ -1,5 +1,5 @@
-from Obj.Task import Task
-from Controller.LoadData import get_days_month
+from BackEnd.Obj.Task import Task
+from BackEnd.Controller.LoadData import get_days_month
 
 
 def create_task(tree_student, req):

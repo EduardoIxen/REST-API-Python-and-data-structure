@@ -1,9 +1,9 @@
 import json
 
-from Obj.Student import Student
-from Obj.Task import Task
-from Data_Structures.List_Year import List_Year
-from Obj.Course import Course
+from BackEnd.Obj.Student import Student
+from BackEnd.Obj.Task import Task
+from BackEnd.Data_Structures.List_Year import List_Year
+from BackEnd.Obj.Course import Course
 
 
 def load_student(tree_student, list_value):
@@ -82,7 +82,8 @@ def load_student_frontend(tree_student, list_values):
         degree = student['carrera']
         email = student['correo']
         password = student['password']
-        credits = student['creditos']
+        #credits = student['creditos']
+        credits = 0
         age = student['edad']
         newStudent = Student(carnet, dpi, name, degree, email, password, credits, age, List_Year())
         tree_student.insert(newStudent)

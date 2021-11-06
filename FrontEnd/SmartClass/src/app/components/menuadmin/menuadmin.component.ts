@@ -28,4 +28,13 @@ export class MenuadminComponent implements OnInit {
     }
   }
 
+  async generateReportPensum(){
+    try{
+      var response = await this.rest.GetRequest("cursosPensum").toPromise();
+    }catch (e) {
+      console.log("Error al generar grafo de cursos del pensum");
+    }
+
+  }
+
 }

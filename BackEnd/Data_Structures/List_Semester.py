@@ -1,6 +1,6 @@
-from Data_Structures.Double_Linked_List import Double_Linked_List
-from Obj.Semester import Semester
-from Data_Structures.NodeList import NodeList
+from BackEnd.Data_Structures.Double_Linked_List import Double_Linked_List
+from BackEnd.Obj.Semester import Semester
+from BackEnd.Data_Structures.NodeList import NodeList
 
 
 class List_Semester(Double_Linked_List):

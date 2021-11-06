@@ -1,5 +1,5 @@
-from Data_Structures.List_Month import List_Month
-from Data_Structures.List_Semester import List_Semester
+from BackEnd.Data_Structures.List_Month import List_Month
+from BackEnd.Data_Structures.List_Semester import List_Semester
 
 
 class Year:

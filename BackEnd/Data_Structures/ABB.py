@@ -1,5 +1,5 @@
 #from NodeTreeAvl import NodeTreeAvl
-from Data_Structures.NodeTreeAvl import NodeTreeAvl
+from BackEnd.Data_Structures.NodeTreeAvl import NodeTreeAvl
 
 
 class ABB:

@@ -1,7 +1,7 @@
-from Graph.ABB_Graph import ABB_Graph
-from Graph.Matriz_Graph import Matrix_Graph
-from Graph.List_Graph import List_Graph
-from  Graph.BTree_Graph import graphTree
+from BackEnd.Graph.ABB_Graph import ABB_Graph
+from BackEnd.Graph.Matriz_Graph import Matrix_Graph
+from BackEnd.Graph.List_Graph import List_Graph
+from BackEnd.Graph.BTree_Graph import graphTree
 
 
 def make_report(req, tree_student, tree_pensum):

@@ -1,5 +1,5 @@
-from Obj.Student import Student
-from Data_Structures.List_Year import List_Year
+from BackEnd.Obj.Student import Student
+from BackEnd.Data_Structures.List_Year import List_Year
 
 
 def create_student(tree_student, req):

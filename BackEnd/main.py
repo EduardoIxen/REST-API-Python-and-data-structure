@@ -1,11 +1,13 @@
 import json
 from Data_Structures.ABB import ABB
+from Data_Structures.Grafo.Grafo import Grafo
+from Graph.Pensum_Graph import Pensum_Graph
 from Analyzer.Parser import parse
 from Controller.LoadData import load_student, load_course, load_student_frontend
 from Controller.GenerateReport import make_report
 from Controller.StudentContr import create_student, modify_student, delete_student, get_student, login_controller
 from Controller.TaskContr import create_task, modify_task, get_task, delete_task
-from Controller.CourseContr import add_course_student, add_course_pensum
+from Controller.CourseContr import add_course_student, add_course_pensum, add_course_graph
 from Data_Structures.B_Tree.B_Tree import B_Tree
 from Data_Structures.Hash_Table.Hash_Table import Hash_Table
 from Controller.NotesController import loadNotes, newNote, notes_student, generateGrah
@@ -16,6 +18,8 @@ from flask_cors import CORS
 
 tree_student = ABB()
 tree_pensum = B_Tree(5)
+graph_pensum = Grafo()
+graph_search = Grafo()
 table_notes = Hash_Table(7)
 app = Flask(__name__)
 CORS(app)
@@ -142,16 +146,30 @@ def add_course():
 def add_course_pe():
     req = request.json
     if request.is_json:
-        return add_course_pensum(tree_pensum, req)
+        add_course_pensum(tree_pensum, req)
+        add_course_graph(req, graph_pensum, graph_search)
+        return {"message":"ok"},200
+        #return add_course_pensum(tree_pensum, req)
     else:
         return {"message": "Request must be JSON"}, 415
+
+@app.get("/cursosPensum")
+def reportGraphPensum():
+    newGraph = Pensum_Graph()
+    newGraph.generateGraph(graph_pensum)  #make a graph of courses pensum
+    return {"message": "Reporte generado correctemente"},200
+
+@app.get("/searchCourse/<code>")
+def search_course(code):
+    newGraph = Pensum_Graph()
+    newGraph.graphCourse(int(code), graph_search)
+    return {"message": "Reporte generado correctemente"},200
+
 
 @app.post("/login")
 def login():
     req = request.json
     if request.is_json:
-        print("usuario:",req["user"])
-        print("contra:",req["password"])
         #return jsonify({'message':'Logeado correctemente'}), 200
         return login_controller(tree_student, req)
 

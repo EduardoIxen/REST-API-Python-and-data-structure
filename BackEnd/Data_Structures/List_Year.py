@@ -1,6 +1,6 @@
-from Data_Structures.Double_Linked_List import Double_Linked_List
-from Obj.Year import Year
-from Data_Structures.NodeList import NodeList
+from BackEnd.Data_Structures.Double_Linked_List import Double_Linked_List
+from BackEnd.Obj.Year import Year
+from BackEnd.Data_Structures.NodeList import NodeList
 
 
 class List_Year(Double_Linked_List):

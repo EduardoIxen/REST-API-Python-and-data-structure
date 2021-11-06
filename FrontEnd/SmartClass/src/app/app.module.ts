@@ -17,6 +17,8 @@ import { LoadfileComponent } from './components/loadfile/loadfile.component';
 import {CookieService} from "ngx-cookie-service";
 import { NotesStudentComponent } from './components/notes-student/notes-student.component';
 import { HashAdminComponent } from './components/hash-admin/hash-admin.component';
+import { PensumAdminComponent } from './components/pensum-admin/pensum-admin.component';
+import { SearchcourseStudentComponent } from './components/searchcourse-student/searchcourse-student.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { HashAdminComponent } from './components/hash-admin/hash-admin.component
     LoadfileComponent,
     NotesStudentComponent,
     HashAdminComponent,
+    PensumAdminComponent,
+    SearchcourseStudentComponent,
   ],
   imports: [
     FormsModule,

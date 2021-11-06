@@ -1,20 +1,25 @@
 <app-menuadmin></app-menuadmin>
-<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="messageOk != null">
-  <strong>{{messageOk}}</strong>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert1()"></button>
-</div>
-<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="messageError != null">
-  <strong>{{messageError}}</strong>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert2()"></button>
-</div>
-<select name="selectTypeLoad" id="sltl" [(ngModel)]="idSelectedType">
-  <option *ngFor="let elementType of getListTypeLoad()" value={{elementType.id}}>
-    {{elementType.content}}
-  </option>
-</select>
-<input type="file" accept="application/json" (change)="uploadFile($event)">
-<div class="form-group">
-  <button class="btn btn-primary mt-2" (click)="loadFile()">
-    Cargar archivo
-  </button>
+<h2 class="text-center">Carga de archivos</h2>
+<div class="container mt-4">
+  <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="messageOk != null">
+    <strong>{{messageOk}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert1()"></button>
+  </div>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="messageError != null">
+    <strong>{{messageError}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert2()"></button>
+  </div>
+  <select aria-label="Default select example" [(ngModel)]="idSelectedType">
+    <option *ngFor="let elementType of getListTypeLoad()" value={{elementType.id}}>
+      {{elementType.content}}
+    </option>
+  </select>
+  <input class="form-control form-control-lg mt-2" id="formFileLg" type="file" accept="application/json"
+         (change)="uploadFile($event)">
+  <div class="form-group">
+    <button class="btn btn-primary mt-2" (click)="loadFile()">
+      Cargar archivo
+    </button>
+  </div>
+
 </div>

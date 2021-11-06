@@ -1,5 +1,5 @@
-from Data_Structures.Double_Linked_List import Double_Linked_List
-from Data_Structures.Sparse_Matrix.NodeM import NodeM
+from BackEnd.Data_Structures.Double_Linked_List import Double_Linked_List
+from BackEnd.Data_Structures.Sparse_Matrix.NodeM import NodeM
 
 class List_Task(Double_Linked_List, NodeM):
     def __init__(self):

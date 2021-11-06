@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class NodeM(ABC):
     def __init__(self):
         self.left = None

@@ -1,4 +1,6 @@
-from Obj.Course import Course
+from BackEnd.Obj.Course import Course
+
+
 class Page:
     def __init__(self, _m):
         self.count = 0

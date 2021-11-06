@@ -1,6 +1,7 @@
 from graphviz import Source
 import os
 
+
 class TableHash_Graph:
     def __init__(self):
         pass

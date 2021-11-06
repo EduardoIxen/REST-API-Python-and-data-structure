@@ -1,4 +1,4 @@
-from Data_Structures.B_Tree.B_Tree import B_Tree
+from BackEnd.Data_Structures.B_Tree.B_Tree import B_Tree
 
 
 class Semester:

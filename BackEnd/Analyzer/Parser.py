@@ -1,4 +1,4 @@
-from Analyzer.Lexer import tokens
+from BackEnd.Analyzer.Lexer import tokens
 
 def p_init(t):
     'init : LQUESTION RELEMENTS RQUESTION list_elements LQUESTION DOLLAR RELEMENTS RQUESTION'
