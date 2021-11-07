@@ -3,7 +3,7 @@ from Data_Structures.ABB import ABB
 from Data_Structures.Grafo.Grafo import Grafo
 from Graph.Pensum_Graph import Pensum_Graph
 from Analyzer.Parser import parse
-from Controller.LoadData import load_student, load_course, load_student_frontend
+from Controller.LoadData import load_student, load_course, load_student_frontend, getListCrypted, getListDecrypted
 from Controller.GenerateReport import make_report
 from Controller.StudentContr import create_student, modify_student, delete_student, get_student, login_controller
 from Controller.TaskContr import create_task, modify_task, get_task, delete_task
@@ -36,7 +36,7 @@ def loadFile():
         if req['path'] == "":
             content_to_dic = json.loads(req['contenido'])
             if req['tipo'] == "estudiante":
-                load_student_frontend(tree_student, content_to_dic)
+                load_student_frontend(tree_student, content_to_dic, "x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=")
                 #load_student(tree_student, content_to_dic)
                 return {"message": "Archivo de estudiantes y tareas cargado correctamente"}, 201
             elif req['tipo'] == "curso":
@@ -196,6 +196,17 @@ def view_notes(id_student):
 def reportHash():
     generateGrah(table_notes)
     return {"message":"exito"}, 200
+
+
+@app.get("/listStudents/<type>/<key>")
+def getListStudents(type, key):
+    if type == "1":
+        print("ecriptado")
+        return getListCrypted(tree_student, key)
+    if type == "2":
+        print("desencriptados")
+        return getListDecrypted(tree_student, key)
+    return {"message": "Error al cargar datos."}, 415
 
 
 if __name__ == '__main__':

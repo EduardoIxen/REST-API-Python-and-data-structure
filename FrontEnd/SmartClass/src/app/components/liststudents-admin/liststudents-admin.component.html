@@ -1,0 +1,85 @@
+<app-menuadmin></app-menuadmin>
+<h2 class="text-center">Datos de los estudiantes</h2>
+<div class="container">
+  <div class="container">
+    <div class="mb-3">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Llave de cifrado"
+             [(ngModel)]="request.key">
+    </div>
+    <div class="col text-center">
+      <button class="btn btn-primary m-2" (click)="dataDeCrypted('2')">
+        Datos descifrados
+      </button>
+      <button class="btn btn-primary m-2" (click)="dataCrypted('1')">
+         Datos  cifrados
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <h1 class="text-center">Ver estudiantes</h1>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-group">
+            <li *ngFor="let student of listStudents"
+                (click)="viewStudent(student)"
+                [class.active]="student == selectedStudent"
+                class="list-group-item list-group-item-action">
+              <span class="badge bg-primary">{{student.carnet}}</span> {{student.name}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body overflow-auto">
+          <div class="mb-3">
+            <label class="form-label">Carnet</label>
+            <input class="form-control" type="text" value="Disabled readonly input" aria-label="Disabled input example"
+                   [(ngModel)]="selectedStudent.carnet"
+                   disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input class="form-control" type="text" value="Disabled readonly input" aria-label="Disabled input example"
+                   [(ngModel)]="selectedStudent.name"
+                   disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">DPI</label>
+            <input class="form-control" type="text" value="Disabled readonly input" aria-label="Disabled input example"
+                   [(ngModel)]="selectedStudent.dpi"
+                   disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Carrera</label>
+            <input class="form-control" type="text" value="Disabled readonly input" aria-label="Disabled input example"
+                   [(ngModel)]="selectedStudent.degree"
+                   disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input class="form-control" type="text" value="Disabled readonly input" aria-label="Disabled input example"
+                   [(ngModel)]="selectedStudent.email"
+                   disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input class="form-control" type="text" value="Disabled readonly input" aria-label="Disabled input example"
+                   [(ngModel)]="selectedStudent.password"
+                   disabled readonly>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Edad</label>
+            <input class="form-control" type="text" value="Disabled readonly input" aria-label="Disabled input example"
+                   [(ngModel)]="selectedStudent.age"
+                   disabled readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

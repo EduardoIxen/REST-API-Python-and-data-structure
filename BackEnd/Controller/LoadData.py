@@ -4,6 +4,8 @@ from BackEnd.Obj.Student import Student
 from BackEnd.Obj.Task import Task
 from BackEnd.Data_Structures.List_Year import List_Year
 from BackEnd.Obj.Course import Course
+from BackEnd.Encryption.HashPassword import HashPassword
+from BackEnd.Encryption.Encryption import Encryption
 
 
 def load_student(tree_student, list_value):
@@ -74,17 +76,19 @@ def load_student(tree_student, list_value):
             print("Student not founf: ", task.carnet)
 
 
-def load_student_frontend(tree_student, list_values):
+def load_student_frontend(tree_student, list_values, key):
+    encryption = Encryption()
     for student in list_values['estudiantes']:
         carnet = str(student['carnet'])
-        dpi = str(student['DPI'])
-        name = student['nombre']
-        degree = student['carrera']
-        email = student['correo']
-        password = student['password']
+        dpi = encryption.encrypt(key, str(student['DPI']))
+        name = encryption.encrypt(key, student['nombre'])
+        degree = encryption.encrypt(key, student['carrera'])
+        email = encryption.encrypt(key, student['correo'])
+        hash_pass = HashPassword(student['password'])
+        password = encryption.encrypt(key, hash_pass.Hash())
         #credits = student['creditos']
         credits = 0
-        age = student['edad']
+        age = encryption.encrypt(key, str(student['edad']))
         newStudent = Student(carnet, dpi, name, degree, email, password, credits, age, List_Year())
         tree_student.insert(newStudent)
 
@@ -123,3 +127,43 @@ def get_days_month(month, year):
     else:
         return 31
 
+def getListCrypted(tree_student, key):
+    listStuden = []
+    preOrder(tree_student.root, listStuden)
+    return {"message":"Estudiantes encriptados.", "listStudents":listStuden}, 200
+
+def getListDecrypted(tree_student, key):
+    listStudent = []
+    preOrderDecript(tree_student.root, listStudent, key)
+    return {"message": "Estudiantes desencriptados.", "listStudents": listStudent}, 200
+
+def preOrder(root, listStudent):
+    if root is None:
+        return
+    dicStd = {}
+    dicStd["carnet"] = root.student.carnet
+    dicStd["dpi"] = root.student.dpi.decode()[-6:]
+    dicStd["name"] = root.student.name.decode()[-6:]
+    dicStd["degree"] = root.student.degree.decode()[-6:]
+    dicStd["email"] = root.student.email.decode()[-6:]
+    dicStd["password"] = root.student.password.decode()[-6:]
+    dicStd["age"] = root.student.age.decode()[-6:]
+    listStudent.append(dicStd)
+    preOrder(root.left.root, listStudent)
+    preOrder(root.right.root, listStudent)
+
+def preOrderDecript(root, listStudent, key):  #desencriptar
+    cr = Encryption()
+    if root is None:
+        return
+    dicStd = {}
+    dicStd["carnet"] = root.student.carnet
+    dicStd["dpi"] = cr.decrypt(key, root.student.dpi).decode()
+    dicStd["name"] = cr.decrypt(key, root.student.name).decode()
+    dicStd["degree"] = cr.decrypt(key, root.student.degree).decode()
+    dicStd["email"] = cr.decrypt(key, root.student.email).decode()
+    dicStd["password"] = cr.decrypt(key, root.student.password).decode()
+    dicStd["age"] = cr.decrypt(key, root.student.age).decode()
+    listStudent.append(dicStd)
+    preOrderDecript(root.left.root, listStudent, key)
+    preOrderDecript(root.right.root, listStudent, key)
