@@ -32,7 +32,12 @@ export class NotesStudentComponent implements OnInit {
     try {
       // @ts-ignore
       this.note.carnet = localStorage.getItem("carnet");
-      //this.note.carnet = this.rest.getUserLogged().carnet;
+      if (this.note.title == ""){
+        this.note.title = "----";
+      }
+      if (this.note.content == ""){
+        this.note.content = "----";
+      }
       var response = await this.rest.PostRequest("newNote", this.note).toPromise();
       var response2 = await this.rest.GetRequest("reportHash").toPromise();
       this.note.title = "";

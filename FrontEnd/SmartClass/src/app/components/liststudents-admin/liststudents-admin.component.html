@@ -4,7 +4,11 @@
   <div class="container">
     <div class="mb-3">
       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Llave de cifrado"
-             [(ngModel)]="request.key">
+             [(ngModel)]="request.key"
+             required>
+      <div class="valid-feedback">
+        Looks good!
+    </div>
     </div>
     <div class="col text-center">
       <button class="btn btn-primary m-2" (click)="dataDeCrypted('2')">

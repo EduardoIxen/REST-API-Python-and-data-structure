@@ -35,23 +35,16 @@ class TableHash_Graph:
             if i < len(listStudent)-1:
                 relationsAcum += f"\""+str(listStudent[i]['carnet'])+"\" -> \""+str(listStudent[i+1]['carnet'])+"\";\n"  #agregar relacion con el siguiente carnet
             for j in range(len(listStudent[i]['listNotes'])):
-                same += "\""+str(listStudent[i]['listNotes'][j]['title']).strip() + str(j) +"\""+ ";"  #agregar los apuntes al same del carnet para que essten en la misma linea
-                labelsAcum += f"\""+str(listStudent[i]['listNotes'][j]['title']).strip() + str(j)+"\"[label=\""+str(listStudent[i]['listNotes'][j]['title'])+"\", group="+str(j)+"];\n"  #crear el nodo del apunte
+                same += "\""+str(listStudent[i]['listNotes'][j]['title']).strip() + str(j) + str(listStudent[i]['carnet']) +"\""+ ";"  #agregar los apuntes al same del carnet para que essten en la misma linea
+                labelsAcum += f"\""+str(listStudent[i]['listNotes'][j]['title']).strip() + str(j)+ str(listStudent[i]['carnet']) +"\"[label=\""+str(listStudent[i]['listNotes'][j]['title'])+"\", group="+str(j)+"];\n"  #crear el nodo del apunte
                 if j < len(listStudent[i]['listNotes']) -1:
-                    relationsAcum += f"\""+str(listStudent[i]['listNotes'][j]['title']).strip() + str(j)+"\" -> \""+str(listStudent[i]['listNotes'][j+1]['title']).strip() + str(j+1)+"\";\n"  #crear la relacion de los apuntes
+                    relationsAcum += f"\""+str(listStudent[i]['listNotes'][j]['title']).strip() + str(j)+str(listStudent[i]['carnet']) +"\" -> \""+str(listStudent[i]['listNotes'][j+1]['title']).strip() + str(j+1)+str(listStudent[i]['carnet']) +"\";\n"  #crear la relacion de los apuntes
                 if j == 0:
-                    relationsAcum += f"\""+str(listStudent[i]['carnet'])+"\" -> "+"\""+str(listStudent[i]['listNotes'][j]['title']).strip() + str(j) +"\""+ ";\n"  #crear realacion del carnet con el primer apunte
+                    relationsAcum += f"\""+str(listStudent[i]['carnet'])+"\" -> "+"\""+str(listStudent[i]['listNotes'][j]['title']).strip() + str(j) +str(listStudent[i]['carnet']) +"\""+ ";\n"  #crear realacion del carnet con el primer apunte
             same += "}\n"
             ranks += same
-        print(ranks)
-        print(labelsAcum)
-        print(relationsAcum)
+
         contentDot = acumInfo + ranks + labelsAcum + relationsAcum + "\n}\n"
-
-        #s = Source(contentDot, filename="../FrontEnd/SmartClass/src/assets/img/hash_table", format="svg")
-        #s.view()
-
-
 
         f = open("../FrontEnd/SmartClass/src/assets/img/hash_table.dot", 'w')
         try:

@@ -1,10 +1,22 @@
 from BackEnd.Obj.Student import Student
 from BackEnd.Data_Structures.List_Year import List_Year
+from BackEnd.Encryption.HashPassword import HashPassword
+from BackEnd.Encryption.Encryption import Encryption
 
 
 def create_student(tree_student, req):
-    tree_student.insert(Student(req['carnet'], req['DPI'], req['nombre'], req['carrera'], req['correo'], req['password']
-                                , req['creditos'], req['edad'], List_Year()))
+    key = "x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ="
+    enctyption = Encryption()
+    dpi = enctyption.encrypt(key, str(req['DPI']))
+    name = enctyption.encrypt(key, str(req['nombre']))
+    degree = enctyption.encrypt(key, str(req['carrera']))
+    email = enctyption.encrypt(key, str(req['correo']))
+    hash_pass = HashPassword(str(req['password']))
+    password = enctyption.encrypt(key, hash_pass.Hash())
+    credits = enctyption.encrypt(key, str(req['creditos']))
+    age = enctyption.encrypt(key, str(req['edad']))
+    tree_student.insert(Student(str(req['carnet']), dpi, name, degree, email, password
+                                , credits, age, List_Year()))
 
     return {"message":"Estudiante creado correctamente"}, 201
 
@@ -49,23 +61,26 @@ def get_student(tree_student, req):
             }
 
 def login_controller(tree_student, req):
+    encrypt = Encryption()
     if req['user'] == "admin" and req['password'] == "admin":
         return {'message': 'Bienvenido admin', 'type':'admin', }, 200
     else:
-        login_result = tree_student.search_login(tree_student.root, req['user'], req['password'])
+        hash_pass = HashPassword(str(req['password']))
+        login_result = tree_student.search_login(tree_student.root, req['user'], hash_pass.Hash())
         if login_result:
             student = tree_student.search(str(req['user'])).student
             return {'message': 'Bienvenido estudiante',
                     'type': 'student',
-                    "token": str(student.name + student.dpi),
+                    "token": str(encrypt.decrypt("x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=", student.name).decode() +
+                                 encrypt.decrypt("x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=", student.dpi).decode()),
                     "user": {
                         "carnet": student.carnet,
-                        "dpi": student.dpi,
-                        "name": student.name,
-                        "email": student.email,
-                        "credits": student.credits,
-                        "degree": student.degree,
-                        "age": student.age
+                        "dpi": encrypt.decrypt("x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=", student.dpi).decode(),
+                        "name": encrypt.decrypt("x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=", student.name).decode(),
+                        "email": encrypt.decrypt("x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=", student.email).decode(),
+                        "credits": "0",
+                        "degree": encrypt.decrypt("x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=", student.degree).decode(),
+                        "age": encrypt.decrypt("x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=", student.age).decode()
                     }
                     }, 200
         else:

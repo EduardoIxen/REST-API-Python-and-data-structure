@@ -38,7 +38,7 @@ def loadFile():
             if req['tipo'] == "estudiante":
                 load_student_frontend(tree_student, content_to_dic, "x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=")
                 #load_student(tree_student, content_to_dic)
-                return {"message": "Archivo de estudiantes y tareas cargado correctamente"}, 201
+                return {"message": "Archivo de estudiantes cargado correctamente"}, 201
             elif req['tipo'] == "curso":
                 return load_course(tree_student, content_to_dic)
         else:
@@ -148,8 +148,7 @@ def add_course_pe():
     if request.is_json:
         add_course_pensum(tree_pensum, req)
         add_course_graph(req, graph_pensum, graph_search)
-        return {"message":"ok"},200
-        #return add_course_pensum(tree_pensum, req)
+        return {"message":"Pensum cargado correctamente"}, 200
     else:
         return {"message": "Request must be JSON"}, 415
 

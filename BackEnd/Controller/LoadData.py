@@ -84,9 +84,8 @@ def load_student_frontend(tree_student, list_values, key):
         name = encryption.encrypt(key, student['nombre'])
         degree = encryption.encrypt(key, student['carrera'])
         email = encryption.encrypt(key, student['correo'])
-        hash_pass = HashPassword(student['password'])
+        hash_pass = HashPassword(str(student['password']))
         password = encryption.encrypt(key, hash_pass.Hash())
-        #credits = student['creditos']
         credits = 0
         age = encryption.encrypt(key, str(student['edad']))
         newStudent = Student(carnet, dpi, name, degree, email, password, credits, age, List_Year())
