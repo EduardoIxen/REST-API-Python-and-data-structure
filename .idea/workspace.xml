@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e51608-9f52-4a7f-bbd8-3d349c810d34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Files/CursosEstudiante.json" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Files/CursosEstudiante.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Graph/BTree_Graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Graph/BTree_Graph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menustudent/menustudent.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/src/app/components/menustudent/menustudent.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +131,8 @@
       <workItem from="1636554388533" duration="1188000" />
       <workItem from="1636615320051" duration="817000" />
       <workItem from="1636651564425" duration="8594000" />
-      <workItem from="1636668905544" duration="669000" />
+      <workItem from="1636668905544" duration="1154000" />
+      <workItem from="1636672627284" duration="275000" />
     </task>
     <servers />
   </component>
