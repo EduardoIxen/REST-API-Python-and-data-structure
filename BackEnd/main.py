@@ -11,6 +11,7 @@ from Controller.CourseContr import add_course_student, add_course_pensum, add_co
 from Data_Structures.B_Tree.B_Tree import B_Tree
 from Data_Structures.Hash_Table.Hash_Table import Hash_Table
 from Controller.NotesController import loadNotes, newNote, notes_student, generateGrah
+from BackEnd.Graph.BTree_Graph import graphTree
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
@@ -62,6 +63,31 @@ def mekeReports():
     req = request.json
     if request.is_json:
         return make_report(req, tree_student, tree_pensum)
+    else:
+        return {"error": "Request must be JSON"}, 415
+
+@app.post("/reportCourseStd")
+def report_course_student():
+    req = request.json
+    if request.is_json:
+
+        node_student = tree_student.search(req['carnet'])
+        if node_student is None:
+            print("std")
+            return {"Warning": "Estudiante no encontrado."}, 404
+        get_year = node_student.student.list_year.search(int(req['year']))
+        if get_year is None:
+            print("año")
+            return {"Warning": "Año no encontrado."}, 404
+        get_semester = get_year.data.list_semesters.search(str(req['semestre']))
+        if get_semester is None:
+            print("semestr")
+            return {"Warning": "Semestre no encontrado."}, 404
+        if get_semester.data.binary_tree.root.count == 0:
+            print("vacio")
+            return {"Warning": "Arbol de cursos vacio."}, 404
+        graphTree(get_semester.data.binary_tree.root, f"DEL ESTUDIANTE {req['carnet']}")
+        return {"Exito": "Arbol de cursos generado correctamente."}, 201
     else:
         return {"error": "Request must be JSON"}, 415
 

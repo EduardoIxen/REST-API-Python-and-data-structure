@@ -10,6 +10,7 @@ import {HashAdminComponent} from "./components/hash-admin/hash-admin.component";
 import {PensumAdminComponent} from "./components/pensum-admin/pensum-admin.component";
 import {SearchcourseStudentComponent} from "./components/searchcourse-student/searchcourse-student.component";
 import {ListstudentsAdminComponent} from "./components/liststudents-admin/liststudents-admin.component";
+import {CoursesStudentComponent} from "./components/courses-student/courses-student.component";
 
 //agregar todas las rutas del proyecto
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: "hashTable", component: HashAdminComponent},
   {path: "graphPensum", component: PensumAdminComponent},
   {path: "searchCourse", component: SearchcourseStudentComponent},
-  {path: "listStudents", component: ListstudentsAdminComponent}
+  {path: "listStudents", component: ListstudentsAdminComponent},
+  {path: "coursesStudent", component: CoursesStudentComponent}
 ];
 
 // @ts-ignore

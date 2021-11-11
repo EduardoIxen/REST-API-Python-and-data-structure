@@ -1,0 +1,34 @@
+<app-menustudent></app-menustudent>
+<div class="card text-center">
+  <h2 class="text-center">Cursos asignados</h2>
+  <div class="container">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="messageOk != null">
+      <strong>{{messageOk}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+              (click)="closeAlert1()"></button>
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="messageError != null">
+      <strong>{{messageError}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+              (click)="closeAlert2()"></button>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Año</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="2021"
+             [(ngModel)]="request.year">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Semestre</label>
+      <input class="form-control" id="exampleFormControlTextarea1" placeholder="1-2" type="number"
+             [(ngModel)]="request.semestre">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary m-2" (click)="getReport()">
+        Buscar
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container mt-3">
+  <img src="assets/img/graphCourseStudent.svg" class="img-fluid" alt="Cursos asignados">
+</div>

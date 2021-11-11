@@ -1,5 +1,6 @@
 import queue
 from graphviz import Source
+import os
 
 
 def graphTree(root, title):
@@ -14,14 +15,22 @@ def graphTree(root, title):
             i = 0
             while i <= tmpPage.count:
                 if tmpPage.leaf[i] is not None:
-                    _queue.put(tmpPage.leaf[i]) #revisar el 13 y 14 no pasan
+                    _queue.put(tmpPage.leaf[i])
                 i += 1
             accumulated[2] += 1
         accumulated[0] += "\n" + accumulated[1]
     accumulated[0] += "}\n"
 
-    src = Source(accumulated[0], filename="./Report/B_tree", format="svg")
-    src.view()
+    #src = Source(accumulated[0], filename="../FrontEnd/SmartClass/src/assets/img/graphCourseStudent", format="svg")
+    #src.view()
+    f = open("../FrontEnd/SmartClass/src/assets/img/graphCourseStudent.dot", 'w')
+    try:
+        f.write(accumulated[0])
+    finally:
+        f.close()
+
+    prog = "dot -Tsvg  ../FrontEnd/SmartClass/src/assets/img/graphCourseStudent.dot -o ../FrontEnd/SmartClass/src/assets/img/graphCourseStudent.svg"
+    os.system(prog)
 
 
 def __print(current, accumulated):

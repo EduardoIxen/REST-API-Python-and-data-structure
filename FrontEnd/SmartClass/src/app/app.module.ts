@@ -20,6 +20,7 @@ import { HashAdminComponent } from './components/hash-admin/hash-admin.component
 import { PensumAdminComponent } from './components/pensum-admin/pensum-admin.component';
 import { SearchcourseStudentComponent } from './components/searchcourse-student/searchcourse-student.component';
 import { ListstudentsAdminComponent } from './components/liststudents-admin/liststudents-admin.component';
+import { CoursesStudentComponent } from './components/courses-student/courses-student.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ListstudentsAdminComponent } from './components/liststudents-admin/list
     PensumAdminComponent,
     SearchcourseStudentComponent,
     ListstudentsAdminComponent,
+    CoursesStudentComponent,
   ],
   imports: [
     FormsModule,
