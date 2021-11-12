@@ -60,6 +60,36 @@
             "password":"sdfadf5er1",
             "creditos": 250,
             "edad":21
+        },
+        {
+            "carnet":"201533245",
+            "DPI":1222112233445,
+            "nombre":"Prueba estud",
+            "carrera":"ing. ciencias y sistemas",
+            "correo":"juann@gmial.com",
+            "password":"sdfadf5er1",
+            "creditos": 250,
+            "edad":21
+        },
+        {
+            "carnet":"201533246",
+            "DPI":1222112233445,
+            "nombre":"Prueba estud 2",
+            "carrera":"ing. ciencias y sistemas",
+            "correo":"juann@gmial.com",
+            "password":"sdfadf5er1",
+            "creditos": 250,
+            "edad":21
+        },
+        {
+            "carnet":"201533247",
+            "DPI":1222112233445,
+            "nombre":"Prueba estud 3",
+            "carrera":"ing. ciencias y sistemas",
+            "correo":"juann@gmial.com",
+            "password":"sdfadf5er1",
+            "creditos": 250,
+            "edad":21
         }
     ]
 }

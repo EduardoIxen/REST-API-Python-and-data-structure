@@ -4,8 +4,8 @@ from BackEnd.Obj.Course import Course
 from BackEnd.Controller.LoadData import load_course
 
 
-def add_course_student(tree_student, req):
-    return load_course(tree_student, req)
+def add_course_student(tree_student, req, listTransactionCourses):
+    return load_course(tree_student, req, listTransactionCourses)
 
 
 def add_course_pensum(tree_B, req):

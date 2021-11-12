@@ -1,5 +1,6 @@
 import json
 
+from datetime import date
 from BackEnd.Obj.Student import Student
 from BackEnd.Obj.Task import Task
 from BackEnd.Data_Structures.List_Year import List_Year
@@ -76,7 +77,7 @@ def load_student(tree_student, list_value):
             print("Student not founf: ", task.carnet)
 
 
-def load_student_frontend(tree_student, list_values, key):
+def load_student_frontend(tree_student, list_values, key, listTransactionStudent):
     encryption = Encryption()
     for student in list_values['estudiantes']:
         carnet = str(student['carnet'])
@@ -91,9 +92,14 @@ def load_student_frontend(tree_student, list_values, key):
         newStudent = Student(carnet, dpi, name, degree, email, password, credits, age, List_Year())
         tree_student.insert(newStudent)
 
+        today = date.today()
+        data = str(student['DPI']) + today.strftime("%d/%m/%Y") + str(student['carnet']) + student['correo']
+        hash_data = HashPassword(data)
+        listTransactionStudent.append(hash_data.Hash())
 
 
-def load_course(tree_student, content):
+
+def load_course(tree_student, content, listTransactionCourses):
     for studentC in content['Estudiantes']:
         node_student = tree_student.search(studentC['Carnet'])
         if node_student is None:
@@ -106,6 +112,11 @@ def load_course(tree_student, content):
                 for course in semester['Cursos']:
                     b_tree_found = student_founf.list_year.search(int(yearC['Año'])).data.list_semesters.search(semester['Semestre']).data.binary_tree
                     b_tree_found.insert(Course(int(course['Codigo']), course['Nombre'], course['Creditos'], course['Prerequisitos'], course['Obligatorio']))
+
+                    today = date.today()
+                    data = today.strftime("%d/%m/%Y") + str(studentC['Carnet']) + str(course['Codigo']) + str(course['Nombre']) + str(course['Creditos'])
+                    hash_data = HashPassword(data)
+                    listTransactionCourses.append(hash_data.Hash())
     return {"message": "Archivo de cursos de estudiantes cargado correctamente"}, 201
 
 

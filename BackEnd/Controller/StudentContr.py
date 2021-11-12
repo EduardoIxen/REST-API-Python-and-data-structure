@@ -1,10 +1,11 @@
+from datetime import date
 from BackEnd.Obj.Student import Student
 from BackEnd.Data_Structures.List_Year import List_Year
 from BackEnd.Encryption.HashPassword import HashPassword
 from BackEnd.Encryption.Encryption import Encryption
 
 
-def create_student(tree_student, req):
+def create_student(tree_student, req, listTransactionStudent):
     key = "x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ="
     enctyption = Encryption()
     dpi = enctyption.encrypt(key, str(req['DPI']))
@@ -17,6 +18,10 @@ def create_student(tree_student, req):
     age = enctyption.encrypt(key, str(req['edad']))
     tree_student.insert(Student(str(req['carnet']), dpi, name, degree, email, password
                                 , credits, age, List_Year()))
+    today = date.today()
+    data = str(req['DPI']) + today.strftime("%d/%m/%Y") + str(req['carnet']) + req['correo']
+    hash_data = HashPassword(data)
+    listTransactionStudent.append(hash_data.Hash())
 
     return {"message":"Estudiante creado correctamente"}, 201
 

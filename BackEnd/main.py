@@ -12,8 +12,10 @@ from Data_Structures.B_Tree.B_Tree import B_Tree
 from Data_Structures.Hash_Table.Hash_Table import Hash_Table
 from Controller.NotesController import loadNotes, newNote, notes_student, generateGrah
 from BackEnd.Graph.BTree_Graph import graphTree
+from Data_Structures.Merkle_Tree.Merkle_Tree import MerkleTree
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from graphviz import Digraph
 
 
 
@@ -22,6 +24,9 @@ tree_pensum = B_Tree(5)
 graph_pensum = Grafo()
 graph_search = Grafo()
 table_notes = Hash_Table(7)
+listTransactionStudent = []
+listTransactionCourses = []
+listTransactionNotes = []
 app = Flask(__name__)
 CORS(app)
 
@@ -37,11 +42,10 @@ def loadFile():
         if req['path'] == "":
             content_to_dic = json.loads(req['contenido'])
             if req['tipo'] == "estudiante":
-                load_student_frontend(tree_student, content_to_dic, "x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=")
-                #load_student(tree_student, content_to_dic)
+                load_student_frontend(tree_student, content_to_dic, "x80AlrHftQ_8Qmh3PbRCPi3BH5SdeX-PBOybGohwCgQ=", listTransactionStudent)
                 return {"message": "Archivo de estudiantes cargado correctamente"}, 201
             elif req['tipo'] == "curso":
-                return load_course(tree_student, content_to_dic)
+                return load_course(tree_student, content_to_dic, listTransactionCourses)
         else:
             f = open(req['path'], "r", encoding="utf-8")
             content = f.read()
@@ -92,7 +96,7 @@ def report_course_student():
 def add_student():
     req = request.json
     if request.is_json:
-        return create_student(tree_student, req)
+        return create_student(tree_student, req, listTransactionStudent)
     else:
         return {"message": "Request must be JSON"}, 415
 
@@ -158,7 +162,7 @@ def del_task():
 def add_course():
     req = request.json
     if request.is_json:
-        return add_course_student(tree_student, req)
+        return add_course_student(tree_student, req, listTransactionCourses)
     else:
         return {"message": "Request must be JSON"}, 415
 
@@ -197,14 +201,14 @@ def login():
 def loadFileNotes():
     req = request.json
     if request.is_json:
-        return loadNotes(req["contenido"], table_notes)
+        return loadNotes(req["contenido"], table_notes, listTransactionNotes)
     return {"message":"Request must be JSON"}, 415
 
 @app.post("/newNote")
 def new_note():
     req = request.json
     if request.is_json:
-        return newNote(req, table_notes)
+        return newNote(req, table_notes, listTransactionNotes)
     return {"message":"Request must be JSON"}, 415
 
 @app.get("/notesStudent/<id_student>")
@@ -224,6 +228,55 @@ def getListStudents(type, key):
     if type == "2":
         return getListDecrypted(tree_student, key)
     return {"message": "Error al cargar datos."}, 415
+
+
+@app.get("/merkleStd")
+def getMerkelTree():
+    if listTransactionStudent:
+        dot = Digraph(filename="merkleTree", format="svg")
+        dot.attr('node', shape='rectangle')
+        dot.graph_attr["labelloc"] = "t"
+        dot.graph_attr["label"] = "ARBOL MERKLE DE ESTUDIANTES"
+        dot.graph_attr["fontsize"] = "22"
+        mrk = MerkleTree()
+        rootMk = mrk.create_merkle_tree(listTransactionStudent, dot)
+        dot.render("./Report/merkleTree", view=True)
+        print(rootMk)
+        return {"message": "Arbol Merkle de estudiantes generado correctamente."}, 200
+    else:
+        return {"message":"No hay transacciones almacenadas."},400
+
+
+@app.get("/merkleNotes")
+def getMerkelTreeNotes():
+    if listTransactionNotes:
+        dot = Digraph(filename="merkleTreeN", format="svg")
+        dot.attr('node', shape='rectangle')
+        dot.graph_attr["labelloc"] = "t"
+        dot.graph_attr["label"] = "ARBOL MERKLE DE APUNTES"
+        dot.graph_attr["fontsize"] = "22"
+        mrk = MerkleTree()
+        rootMk = mrk.create_merkle_tree(listTransactionNotes, dot)
+        dot.render("./Report/merkleTreeN", view=True)
+        return {"message": "Arbol Merkle de apuntes generado correctamente."}, 200
+    else:
+        return {"message":"No hay transacciones almacenadas."}, 400
+
+
+@app.get("/merkleCourses")
+def getMerkelTreeCourses():
+    if listTransactionCourses:
+        dot = Digraph(filename="merkleTreeC", format="svg")
+        dot.attr('node', shape='rectangle')
+        dot.graph_attr["labelloc"] = "t"
+        dot.graph_attr["label"] = "ARBOL MERKLE DE CURSOS"
+        dot.graph_attr["fontsize"] = "22"
+        mrk = MerkleTree()
+        rootMk = mrk.create_merkle_tree(listTransactionNotes, dot)
+        dot.render("./Report/merkleTreeC", view=True)
+        return {"message": "Arbol Merkle de cursos generado correctamente."}, 200
+    else:
+        return {"message":"No hay transacciones almacenadas."},400
 
 
 if __name__ == '__main__':

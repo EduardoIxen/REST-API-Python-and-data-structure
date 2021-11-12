@@ -1,5 +1,17 @@
 digraph {
 	graph [rankdir=LR]
 	node [shape=rectangle]
-	0 [label="0\n"]
+	796 [label="796\nLenguajes formales y de programacion"]
+	770 -> 796 [label=4]
+	795 -> 796 [label=2]
+	960 -> 796 [label=5]
+	960 [label="960\nMatematica computo 1"]
+	103 -> 960 [label=7]
+	103 [label="103\nMatematica Basica 2"]
+	101 -> 103 [label=7]
+	101 [label="101\nMatematica Basica 1"]
+	795 [label="795\nLogica de sistemas"]
+	103 -> 795 [label=7]
+	770 [label="770\nIntroduccion a la programacion y computacion 1"]
+	103 -> 770 [label=7]
 }
