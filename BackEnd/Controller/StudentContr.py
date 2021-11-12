@@ -47,7 +47,7 @@ def delete_student(tree_student, req):
 def get_student(tree_student, req):
     node_student = tree_student.search(req['carnet'])
     if node_student is None:
-        return {"Warning": f"Estudiante no encontrado -> {req['carnet']}"}, 404
+        return {"message": f"Estudiante no encontrado -> {req['carnet']}"}, 404
 
     student_found = node_student.student
     return {"Carnet":f"{student_found.carnet}",

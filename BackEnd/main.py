@@ -64,7 +64,7 @@ def mekeReports():
     if request.is_json:
         return make_report(req, tree_student, tree_pensum)
     else:
-        return {"error": "Request must be JSON"}, 415
+        return {"message": "Request must be JSON"}, 415
 
 @app.post("/reportCourseStd")
 def report_course_student():
@@ -73,30 +73,25 @@ def report_course_student():
 
         node_student = tree_student.search(req['carnet'])
         if node_student is None:
-            print("std")
-            return {"Warning": "Estudiante no encontrado."}, 404
+            return {"message": "Estudiante no encontrado."}, 404
         get_year = node_student.student.list_year.search(int(req['year']))
         if get_year is None:
-            print("año")
-            return {"Warning": "Año no encontrado."}, 404
+            return {"message": "Año no encontrado."}, 404
         get_semester = get_year.data.list_semesters.search(str(req['semestre']))
         if get_semester is None:
-            print("semestr")
-            return {"Warning": "Semestre no encontrado."}, 404
+            return {"message": "Semestre no encontrado."}, 404
         if get_semester.data.binary_tree.root.count == 0:
-            print("vacio")
-            return {"Warning": "Arbol de cursos vacio."}, 404
+            return {"message": "Arbol de cursos vacio."}, 404
         graphTree(get_semester.data.binary_tree.root, f"DEL ESTUDIANTE {req['carnet']}")
-        return {"Exito": "Arbol de cursos generado correctamente."}, 201
+        return {"message": "Arbol de cursos generado correctamente."}, 201
     else:
-        return {"error": "Request must be JSON"}, 415
+        return {"message": "Request must be JSON"}, 415
 
 
 @app.post("/estudiante")
 def add_student():
     req = request.json
     if request.is_json:
-        print("llego", req)
         return create_student(tree_student, req)
     else:
         return {"message": "Request must be JSON"}, 415
@@ -165,7 +160,7 @@ def add_course():
     if request.is_json:
         return add_course_student(tree_student, req)
     else:
-        return {"error": "Request must be JSON"}, 415
+        return {"message": "Request must be JSON"}, 415
 
 
 @app.post("/cursosPensum")
@@ -214,7 +209,6 @@ def new_note():
 
 @app.get("/notesStudent/<id_student>")
 def view_notes(id_student):
-    print(id_student)
     return notes_student(id_student, table_notes)
 
 @app.get("/reportHash")
@@ -226,10 +220,8 @@ def reportHash():
 @app.get("/listStudents/<type>/<key>")
 def getListStudents(type, key):
     if type == "1":
-        print("ecriptado")
         return getListCrypted(tree_student, key)
     if type == "2":
-        print("desencriptados")
         return getListDecrypted(tree_student, key)
     return {"message": "Error al cargar datos."}, 415
 

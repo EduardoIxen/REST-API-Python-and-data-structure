@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e51608-9f52-4a7f-bbd8-3d349c810d34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/SmartClass/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/SmartClass/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Controller/StudentContr.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/Controller/StudentContr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +133,9 @@
       <workItem from="1636615320051" duration="817000" />
       <workItem from="1636651564425" duration="8594000" />
       <workItem from="1636668905544" duration="1154000" />
-      <workItem from="1636672627284" duration="275000" />
+      <workItem from="1636672627284" duration="753000" />
+      <workItem from="1636675179510" duration="594000" />
+      <workItem from="1636675878199" duration="454000" />
     </task>
     <servers />
   </component>
